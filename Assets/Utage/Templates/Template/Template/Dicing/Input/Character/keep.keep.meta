@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 8b767d6390fac734bbb7dcda370bbc13
+timeCreated: 1471962238
+licenseType: Store
+DefaultImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Templates/Template/Template/Dicing/Input/Character/keep.keep
+  uploadId: 852840

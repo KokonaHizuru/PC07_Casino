@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: d6150b1cd42d5aa4a8c9c14cec170603
+timeCreated: 1442652841
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Scripts/ADV/Command/UI/AdvCommandHideMessageWindow.cs
+  uploadId: 852840

@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 0b739046968e88b4fbc35478b5927d64
+timeCreated: 1468038366
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Scripts/ADV/Command/Wait/Effect/AdvCommandRuleFadeBase.cs
+  uploadId: 852840

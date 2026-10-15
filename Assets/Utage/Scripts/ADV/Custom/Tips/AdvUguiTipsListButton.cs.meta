@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: bbd4ab1a1e774853846db05ec9679b6a
+timeCreated: 1706672128
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Scripts/ADV/Custom/Tips/AdvUguiTipsListButton.cs
+  uploadId: 852840

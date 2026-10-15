@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 39b1e36af8094ef08d1e32ee47771ff7
+timeCreated: 1752490686
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Sample/Scripts/SampleInterruptScenarioButtonController.cs
+  uploadId: 852840

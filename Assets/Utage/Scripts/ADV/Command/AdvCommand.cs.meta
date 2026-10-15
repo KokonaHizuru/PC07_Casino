@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 239c1a31664db0f499e0f5d3f0cd4d7a
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Scripts/ADV/Command/AdvCommand.cs
+  uploadId: 852840

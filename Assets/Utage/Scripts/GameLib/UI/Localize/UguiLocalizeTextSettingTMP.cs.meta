@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 7177768748c64700a5ddcd22e9beb391
+timeCreated: 1689760104
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Scripts/GameLib/UI/Localize/UguiLocalizeTextSettingTMP.cs
+  uploadId: 852840

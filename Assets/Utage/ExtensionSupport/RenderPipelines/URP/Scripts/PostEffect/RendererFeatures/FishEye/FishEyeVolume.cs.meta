@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 47918d516f9b3da41a14d4ac0a02a073
+timeCreated: 1681055755
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/ExtensionSupport/RenderPipelines/URP/Scripts/PostEffect/RendererFeatures/FishEye/FishEyeVolume.cs
+  uploadId: 852840

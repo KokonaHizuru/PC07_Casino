@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 9d9d6398ab8e8204e8976c798918320f
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Sample/Scripts/SampleRuntimeScenarioFile.cs
+  uploadId: 852840

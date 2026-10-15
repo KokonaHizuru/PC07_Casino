@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: 3df6fc35359881f4b8b4db75d5a1b5f4
+ShaderImporter:
+  userData: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Resources/Utage-Shader/ImageEffect/Utage-ImageEffect-Twirl.shader
+  uploadId: 852840

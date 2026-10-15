@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 39717e01bd725084a8cac3e7c6f23597
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Scripts/ADV/Command/Grahic/AdvCommandBgEvent.cs
+  uploadId: 852840

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 6d1df78f323b1af4987b4cae1eb81e5d
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: -300
+  icon: {instanceID: 0}
+  userData: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Scripts/GameLib/CustomProjectSetting/BootCustomProjectSetting.cs
+  uploadId: 852840

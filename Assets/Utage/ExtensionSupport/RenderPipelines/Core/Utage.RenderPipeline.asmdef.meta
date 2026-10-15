@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: dc02837802ff7284b966a5fd2aefcc54
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/ExtensionSupport/RenderPipelines/Core/Utage.RenderPipeline.asmdef
+  uploadId: 852840

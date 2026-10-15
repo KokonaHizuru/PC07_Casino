@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d382ba6e0e142614288f23eaf051db7d
+timeCreated: 1448744209
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/SampleOthers/SampleLegacy/Prefabs/UI/SelectionItem.prefab
+  uploadId: 852840

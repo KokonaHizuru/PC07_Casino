@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 59e385282305f5448ac8527881725546
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Fonts/CharacterCollections/NotoSansJP/NotoSansJP Character
+    Collection.txt
+  uploadId: 852840

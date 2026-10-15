@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b3fa212d0798bf8419f5ce7e14dd6d23
+timeCreated: 1478928541
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: texture/character/misaki.asset
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Sample/Resources/Sample/Texture/Character/Misaki.asset
+  uploadId: 852840

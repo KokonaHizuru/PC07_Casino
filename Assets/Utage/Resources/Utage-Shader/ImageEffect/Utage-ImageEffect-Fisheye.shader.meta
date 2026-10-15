@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: 45692644febae464b90d2d83c61b47a5
+ShaderImporter:
+  userData: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Resources/Utage-Shader/ImageEffect/Utage-ImageEffect-Fisheye.shader
+  uploadId: 852840

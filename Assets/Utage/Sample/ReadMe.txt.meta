@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c380a29fe3c62a344a47828d67f48f41
+timeCreated: 1448857823
+licenseType: Store
+TextScriptImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Sample/ReadMe.txt
+  uploadId: 852840

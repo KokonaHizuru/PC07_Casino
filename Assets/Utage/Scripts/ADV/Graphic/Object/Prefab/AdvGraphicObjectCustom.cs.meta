@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 4a54a9c35a6f8a647a110605e4f64018
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Scripts/ADV/Graphic/Object/Prefab/AdvGraphicObjectCustom.cs
+  uploadId: 852840

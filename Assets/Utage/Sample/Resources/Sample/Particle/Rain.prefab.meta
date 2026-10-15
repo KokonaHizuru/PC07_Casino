@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 72b0c9a65d6f477489cca1baf0dfec8c
+timeCreated: 1480474316
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: particle/rain.asset
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Sample/Resources/Sample/Particle/Rain.prefab
+  uploadId: 852840

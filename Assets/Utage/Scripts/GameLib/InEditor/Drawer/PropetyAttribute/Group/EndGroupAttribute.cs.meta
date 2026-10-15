@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: e509049035524d7d89ac2829eb0943c3
+timeCreated: 1688782929
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Scripts/GameLib/InEditor/Drawer/PropetyAttribute/Group/EndGroupAttribute.cs
+  uploadId: 852840

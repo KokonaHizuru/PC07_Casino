@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 2499710a7db94bea8f3f044a602b6c44
+timeCreated: 1689684065
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Scripts/GameLib/SystemUI/SystemUiFramerateChangerTMP.cs
+  uploadId: 852840

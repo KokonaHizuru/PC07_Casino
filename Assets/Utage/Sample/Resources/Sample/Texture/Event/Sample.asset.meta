@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 9aaf9566ee8b05f47949d9fca5bd5096
+timeCreated: 1479119683
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: texture/event/sample.asset
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Sample/Resources/Sample/Texture/Event/Sample.asset
+  uploadId: 852840

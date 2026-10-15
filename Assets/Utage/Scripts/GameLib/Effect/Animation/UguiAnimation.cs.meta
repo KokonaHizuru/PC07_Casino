@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 84167ba60c15db547aed9d8d635c4c34
+timeCreated: 1444855331
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Scripts/GameLib/Effect/Animation/UguiAnimation.cs
+  uploadId: 852840

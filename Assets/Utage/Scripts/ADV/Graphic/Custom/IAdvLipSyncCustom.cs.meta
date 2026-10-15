@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: edf0b857e8a5b8544b438ef87729d19d
+timeCreated: 1568519074
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Scripts/ADV/Graphic/Custom/IAdvLipSyncCustom.cs
+  uploadId: 852840

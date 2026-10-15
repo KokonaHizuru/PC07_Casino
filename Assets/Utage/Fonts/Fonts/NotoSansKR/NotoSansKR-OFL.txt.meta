@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 8de0a91351aac4342bcfa0b2f509b3cd
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Fonts/Fonts/NotoSansKR/NotoSansKR-OFL.txt
+  uploadId: 852840

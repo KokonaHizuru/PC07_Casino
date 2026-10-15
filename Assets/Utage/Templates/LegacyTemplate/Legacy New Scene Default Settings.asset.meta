@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ddffacf5f80779d4fa07f45bc991f374
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Templates/LegacyTemplate/Legacy New Scene Default Settings.asset
+  uploadId: 852840

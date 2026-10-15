@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 277e2abe010348afad880a678a38eddb
+timeCreated: 1740514191
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Sample/Scripts/SampleSelectionClickMouseCursor.cs
+  uploadId: 852840

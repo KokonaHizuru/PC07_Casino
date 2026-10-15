@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ca5cf21b70f22e7449234732d16997a5
+timeCreated: 1482241105
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: texture/character/avatar.asset
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Sample/Resources/Sample/Texture/Character/Avatar.asset
+  uploadId: 852840

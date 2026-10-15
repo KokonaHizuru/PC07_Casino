@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 3b826ed1636e43342bd21b83ba111c5e
+timeCreated: 1480595239
+licenseType: Store
+TextScriptImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Sample/UnityChan/SD_unitychan/UnityChanShader/Shader/readme.txt
+  uploadId: 852840

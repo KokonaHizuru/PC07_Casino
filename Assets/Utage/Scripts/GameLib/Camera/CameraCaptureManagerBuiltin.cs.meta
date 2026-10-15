@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 7d7b04b3ad4347b2832efb7f3c84e848
+timeCreated: 1681969352
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Scripts/GameLib/Camera/CameraCaptureManagerBuiltin.cs
+  uploadId: 852840

@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: 58e22a03f6c009042986d685aae94ef5
+ShaderImporter:
+  userData: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Resources/Utage-Shader/ImageEffect/Utage-ImageEffect-MotionBlur.shader
+  uploadId: 852840

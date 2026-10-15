@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 8a01de2df9284f52ba39d75a98bfa87d
+timeCreated: 1706404386
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Scripts/ADV/Custom/Tips/TipsManager.cs
+  uploadId: 852840

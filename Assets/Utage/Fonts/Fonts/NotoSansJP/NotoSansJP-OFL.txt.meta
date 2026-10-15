@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 18211d9d9008ce54daec3a370249c2dc
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Fonts/Fonts/NotoSansJP/NotoSansJP-OFL.txt
+  uploadId: 852840

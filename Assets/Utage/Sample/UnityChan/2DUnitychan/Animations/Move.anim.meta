@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 3939e719ef4eb4b02bf39e3af35e8815
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Sample/UnityChan/2DUnitychan/Animations/Move.anim
+  uploadId: 852840

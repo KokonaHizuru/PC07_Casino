@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 3108eb4f9fbe4c94ca8b7f7efe0ee1c7
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Scripts/GameLib/UI/UguiCategoryGridPage.cs
+  uploadId: 852840

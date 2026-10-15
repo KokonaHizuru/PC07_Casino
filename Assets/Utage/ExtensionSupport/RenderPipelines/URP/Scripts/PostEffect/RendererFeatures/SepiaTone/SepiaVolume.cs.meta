@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 4a252d6147d115747abb49c226e56774
+timeCreated: 1681055755
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/ExtensionSupport/RenderPipelines/URP/Scripts/PostEffect/RendererFeatures/SepiaTone/SepiaVolume.cs
+  uploadId: 852840

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 7bda808f8e6b19a40a367e267aa9ebfb
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Scripts/ADV/Effect/IAdvSkipSpeed.cs
+  uploadId: 852840

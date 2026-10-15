@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 41d28a4d90ea4d2dba116b099d516537
+timeCreated: 1681326757
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/ExtensionSupport/RenderPipelines/Shader/PostEffect/Utage-PostEffect-BlurGauss.shader
+  uploadId: 852840

@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: a547d0a3fde7e9247acd3f73d5a40f3b
+DefaultImporter:
+  userData: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Templates/LegacyTemplate/LegacyTemplate.unity
+  uploadId: 852840

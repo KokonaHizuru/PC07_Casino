@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: d6ce4ba9f5e10e74e9fe340f5ce0480a
+ShaderImporter:
+  userData: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Resources/Utage-Shader/ImageEffect/Utage-ImageEffect-RuleFade.shader
+  uploadId: 852840

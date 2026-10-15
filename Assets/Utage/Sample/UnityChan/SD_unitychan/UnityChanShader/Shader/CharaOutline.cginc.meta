@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 92f50eca565e9cf46af32431752a116d
+timeCreated: 1458276847
+licenseType: Store
+ShaderImporter:
+  defaultTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Sample/UnityChan/SD_unitychan/UnityChanShader/Shader/CharaOutline.cginc
+  uploadId: 852840

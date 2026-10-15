@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 2a1f432e247e2114896a58773922f9ee
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  preprocessorOverride: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/ExtensionSupport/RenderPipelines/Shader/PostEffect/Utage-PostEffect-Sepia.shader
+  uploadId: 852840

@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 033fd74486e446fab62106480f04ea8a
+timeCreated: 1720843494
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Scripts/ADV/Command/Wait/Effect/AdvCommandWaitVideo.cs
+  uploadId: 852840

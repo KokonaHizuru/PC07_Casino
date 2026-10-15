@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: c3cfe7c50e7746b49ef59f4cfcb0de8b
+timeCreated: 1687476587
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Scripts/ADV/ScenarioImporter/TextLengthValidate/AdvTextValidator.cs
+  uploadId: 852840

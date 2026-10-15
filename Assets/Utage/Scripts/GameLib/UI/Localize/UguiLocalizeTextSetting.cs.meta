@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 1fc8bef3952826840be8819aef82db3b
+timeCreated: 1447984073
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Scripts/GameLib/UI/Localize/UguiLocalizeTextSetting.cs
+  uploadId: 852840

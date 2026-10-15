@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 9b855dd9f0485ab428353bd738667e93
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Scripts/ADV/Command/Grahic/AdvCommandCharacterOff.cs
+  uploadId: 852840

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 52349f787e485b748b6a76fce790065f
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Editor/ExcelParser/UtageExcelParser.asmdef
+  uploadId: 852840

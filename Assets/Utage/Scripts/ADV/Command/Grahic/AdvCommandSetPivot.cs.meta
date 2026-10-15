@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 37236ec308831b94a8f1456a9de9e421
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Scripts/ADV/Command/Grahic/AdvCommandSetPivot.cs
+  uploadId: 852840

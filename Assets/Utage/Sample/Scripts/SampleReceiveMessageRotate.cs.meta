@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 93061a387d484ce8904d793222138160
+timeCreated: 1739447669
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Sample/Scripts/SampleReceiveMessageRotate.cs
+  uploadId: 852840

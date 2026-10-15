@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: fae7bb17585ad284a8eb2ee3aff8f365
+timeCreated: 1454392831
+licenseType: Store
+DefaultImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Templates/LegacyTemplate/LegacyTemplate/Resources/LegacyTemplate/Sound/Ambience/keep.keep
+  uploadId: 852840

@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 9c2bd9cfa56537b47940cd79ac490cb2
+timeCreated: 1448877128
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Editor/Menu/Checker/AdvBuildChecker.cs
+  uploadId: 852840

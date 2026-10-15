@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: b3a1e5e86d21c5d49a74972e6b4fc0af
+DefaultImporter:
+  userData: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Sample/Scenarios/SampleInterrupt.xls
+  uploadId: 852840

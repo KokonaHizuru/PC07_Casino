@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 960eb1ab09a5d70479d98d35653de643
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Sample/Scenarios/SampleCSV.csv
+  uploadId: 852840

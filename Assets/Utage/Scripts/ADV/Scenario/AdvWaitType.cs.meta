@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: dbc36f11f4fbd6b4f8eeee6ac3773695
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Scripts/ADV/Scenario/AdvWaitType.cs
+  uploadId: 852840

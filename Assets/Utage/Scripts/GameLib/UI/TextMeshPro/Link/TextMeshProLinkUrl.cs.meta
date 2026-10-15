@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 7868f2da5e97496b9c8b59512e0db486
+timeCreated: 1706075311
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Scripts/GameLib/UI/TextMeshPro/Link/TextMeshProLinkUrl.cs
+  uploadId: 852840

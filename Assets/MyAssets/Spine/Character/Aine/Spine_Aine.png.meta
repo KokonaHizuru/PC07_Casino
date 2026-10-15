@@ -1,0 +1,1170 @@
+fileFormatVersion: 2
+guid: 204b3a77f78ed8c408e201b0708ecdfd
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6514618595403655576
+    second: Spine_Aine_0
+  - first:
+      213: -1156608419777242427
+    second: Spine_Aine_1
+  - first:
+      213: 456625213785165241
+    second: Spine_Aine_2
+  - first:
+      213: 2401679460379420686
+    second: Spine_Aine_3
+  - first:
+      213: -7043529100984766075
+    second: Spine_Aine_4
+  - first:
+      213: 8319075162191144040
+    second: Spine_Aine_5
+  - first:
+      213: -6913355612855518089
+    second: Spine_Aine_6
+  - first:
+      213: 1424635858171040057
+    second: Spine_Aine_7
+  - first:
+      213: -7716650821464393813
+    second: Spine_Aine_8
+  - first:
+      213: 598001143039344583
+    second: Spine_Aine_9
+  - first:
+      213: -7735760234891015895
+    second: Spine_Aine_10
+  - first:
+      213: 5127984842233975339
+    second: Spine_Aine_11
+  - first:
+      213: 6899149544580959222
+    second: Spine_Aine_12
+  - first:
+      213: -1179720193286875171
+    second: Spine_Aine_13
+  - first:
+      213: 5321651649438594691
+    second: Spine_Aine_14
+  - first:
+      213: -6830856283160727443
+    second: Spine_Aine_15
+  - first:
+      213: -3319060066701662713
+    second: Spine_Aine_16
+  - first:
+      213: -8724098556790942910
+    second: Spine_Aine_17
+  - first:
+      213: 1149901575853605821
+    second: Spine_Aine_18
+  - first:
+      213: -352585065906992820
+    second: Spine_Aine_19
+  - first:
+      213: -1668160199315267728
+    second: Spine_Aine_20
+  - first:
+      213: -6099181438978604731
+    second: Spine_Aine_21
+  - first:
+      213: -1150980235285496588
+    second: Spine_Aine_22
+  - first:
+      213: 340300474231003973
+    second: Spine_Aine_23
+  - first:
+      213: -249889721915187541
+    second: Spine_Aine_24
+  - first:
+      213: 483279309424633652
+    second: Spine_Aine_25
+  - first:
+      213: -7654451797243659581
+    second: Spine_Aine_26
+  - first:
+      213: 434357049200455117
+    second: Spine_Aine_27
+  - first:
+      213: -1016779300738289700
+    second: Spine_Aine_28
+  - first:
+      213: -1810426901909055280
+    second: Spine_Aine_29
+  - first:
+      213: -569718356941085167
+    second: Spine_Aine_30
+  - first:
+      213: 3338021588943673157
+    second: Spine_Aine_31
+  - first:
+      213: 648915722981061185
+    second: Spine_Aine_32
+  - first:
+      213: -8794148427318455486
+    second: Spine_Aine_33
+  - first:
+      213: 3934074504843756216
+    second: Spine_Aine_34
+  - first:
+      213: -1230490356860965483
+    second: Spine_Aine_35
+  - first:
+      213: 1881831120053410215
+    second: Spine_Aine_36
+  - first:
+      213: 4732458863557825535
+    second: Spine_Aine_37
+  - first:
+      213: 5821303305412141106
+    second: Spine_Aine_38
+  - first:
+      213: 4613783748344495651
+    second: Spine_Aine_39
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 1
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 0
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Spine_Aine_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 710
+        width: 290
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8669fc547ec6795a0800000000000000
+      internalID: -6514618595403655576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spine_Aine_1
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 710
+        width: 310
+        height: 195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ca93fa25c6e2ffe0800000000000000
+      internalID: -1156608419777242427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spine_Aine_2
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 701
+        width: 95
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bdc62f6632465600800000000000000
+      internalID: 456625213785165241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spine_Aine_3
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 690
+        width: 148
+        height: 236
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e08644c9eba745120800000000000000
+      internalID: 2401679460379420686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spine_Aine_4
+      rect:
+        serializedVersion: 2
+        x: 853
+        y: 678
+        width: 102
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5813da2d99b504e90800000000000000
+      internalID: -7043529100984766075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spine_Aine_5
+      rect:
+        serializedVersion: 2
+        x: 957
+        y: 758
+        width: 146
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 864ad2e98ca437370800000000000000
+      internalID: 8319075162191144040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spine_Aine_6
+      rect:
+        serializedVersion: 2
+        x: 1114
+        y: 599
+        width: 553
+        height: 327
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77c3bc9d2b3de00a0800000000000000
+      internalID: -6913355612855518089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spine_Aine_7
+      rect:
+        serializedVersion: 2
+        x: 1672
+        y: 771
+        width: 153
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9319194d3c255c310800000000000000
+      internalID: 1424635858171040057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spine_Aine_8
+      rect:
+        serializedVersion: 2
+        x: 1827
+        y: 849
+        width: 130
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba773e266f2f8e490800000000000000
+      internalID: -7716650821464393813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spine_Aine_9
+      rect:
+        serializedVersion: 2
+        x: 1827
+        y: 771
+        width: 165
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7cf332a0fd68c4800800000000000000
+      internalID: 598001143039344583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spine_Aine_10
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2
+        width: 351
+        height: 698
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9298abb5d0f05a490800000000000000
+      internalID: -7735760234891015895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spine_Aine_11
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 663
+        width: 56
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2291f67b034a2740800000000000000
+      internalID: 5127984842233975339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spine_Aine_12
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 663
+        width: 35
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fbcb0125f3bebf50800000000000000
+      internalID: 6899149544580959222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spine_Aine_13
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 663
+        width: 145
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd7d7c01cbac0afe0800000000000000
+      internalID: -1179720193286875171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spine_Aine_14
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 626
+        width: 76
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 386b827dafd4ad940800000000000000
+      internalID: 5321651649438594691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spine_Aine_15
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 626
+        width: 130
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d60b572e66ce331a0800000000000000
+      internalID: -6830856283160727443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spine_Aine_16
+      rect:
+        serializedVersion: 2
+        x: 957
+        y: 678
+        width: 155
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7062018547450f1d0800000000000000
+      internalID: -3319060066701662713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spine_Aine_17
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 584
+        width: 177
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2435af8b596cde680800000000000000
+      internalID: -8724098556790942910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spine_Aine_18
+      rect:
+        serializedVersion: 2
+        x: 1843
+        y: 595
+        width: 151
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db38a6b046545ff00800000000000000
+      internalID: 1149901575853605821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spine_Aine_19
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 1
+        width: 197
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c49818920cd5b1bf0800000000000000
+      internalID: -352585065906992820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spine_Aine_20
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 626
+        width: 288
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07f5e53132189d8e0800000000000000
+      internalID: -1668160199315267728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spine_Aine_21
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 22
+        width: 332
+        height: 602
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 541460dcbca5b5ba0800000000000000
+      internalID: -6099181438978604731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spine_Aine_22
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 2
+        width: 323
+        height: 595
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fcff4cf295e600f0800000000000000
+      internalID: -1150980235285496588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spine_Aine_23
+      rect:
+        serializedVersion: 2
+        x: 1220
+        y: 2
+        width: 173
+        height: 562
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54b9f637a7df8b400800000000000000
+      internalID: 340300474231003973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spine_Aine_24
+      rect:
+        serializedVersion: 2
+        x: 1395
+        y: 483
+        width: 111
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bae59343f96388cf0800000000000000
+      internalID: -249889721915187541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spine_Aine_25
+      rect:
+        serializedVersion: 2
+        x: 1508
+        y: 483
+        width: 181
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4372d8da8f3f4b600800000000000000
+      internalID: 483279309424633652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spine_Aine_26
+      rect:
+        serializedVersion: 2
+        x: 1760
+        y: 437
+        width: 81
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3caf0fa35ace5c590800000000000000
+      internalID: -7654451797243659581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spine_Aine_27
+      rect:
+        serializedVersion: 2
+        x: 1843
+        y: 443
+        width: 153
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcda7475f65270600800000000000000
+      internalID: 434357049200455117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spine_Aine_28
+      rect:
+        serializedVersion: 2
+        x: 1395
+        y: 2
+        width: 140
+        height: 479
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdf2684fc9ca3e1f0800000000000000
+      internalID: -1016779300738289700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spine_Aine_29
+      rect:
+        serializedVersion: 2
+        x: 1537
+        y: 2
+        width: 131
+        height: 475
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d856e3235210e6e0800000000000000
+      internalID: -1810426901909055280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spine_Aine_30
+      rect:
+        serializedVersion: 2
+        x: 1670
+        y: 120
+        width: 89
+        height: 361
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 116e1804c24f718f0800000000000000
+      internalID: -569718356941085167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spine_Aine_31
+      rect:
+        serializedVersion: 2
+        x: 1760
+        y: 290
+        width: 119
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 547929513f8035e20800000000000000
+      internalID: 3338021588943673157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spine_Aine_32
+      rect:
+        serializedVersion: 2
+        x: 1884
+        y: 282
+        width: 81
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 142b3757969610900800000000000000
+      internalID: 648915722981061185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spine_Aine_33
+      rect:
+        serializedVersion: 2
+        x: 1760
+        y: 120
+        width: 122
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2439f974998e4f580800000000000000
+      internalID: -8794148427318455486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spine_Aine_34
+      rect:
+        serializedVersion: 2
+        x: 1884
+        y: 132
+        width: 93
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b202252be3a89630800000000000000
+      internalID: 3934074504843756216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spine_Aine_35
+      rect:
+        serializedVersion: 2
+        x: 1691
+        y: 2
+        width: 194
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59d22c33a8b6ceee0800000000000000
+      internalID: -1230490356860965483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spine_Aine_36
+      rect:
+        serializedVersion: 2
+        x: 1889
+        y: 91
+        width: 13
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a91f0eee6b9d1a10800000000000000
+      internalID: 1881831120053410215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spine_Aine_37
+      rect:
+        serializedVersion: 2
+        x: 1912
+        y: 64
+        width: 70
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff3538443421da140800000000000000
+      internalID: 4732458863557825535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spine_Aine_38
+      rect:
+        serializedVersion: 2
+        x: 1887
+        y: 12
+        width: 18
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 230e5e0838c69c050800000000000000
+      internalID: 5821303305412141106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spine_Aine_39
+      rect:
+        serializedVersion: 2
+        x: 1912
+        y: 2
+        width: 41
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32e3b8ecfd3770040800000000000000
+      internalID: 4613783748344495651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Spine_Aine_0: -6514618595403655576
+      Spine_Aine_1: -1156608419777242427
+      Spine_Aine_10: -7735760234891015895
+      Spine_Aine_11: 5127984842233975339
+      Spine_Aine_12: 6899149544580959222
+      Spine_Aine_13: -1179720193286875171
+      Spine_Aine_14: 5321651649438594691
+      Spine_Aine_15: -6830856283160727443
+      Spine_Aine_16: -3319060066701662713
+      Spine_Aine_17: -8724098556790942910
+      Spine_Aine_18: 1149901575853605821
+      Spine_Aine_19: -352585065906992820
+      Spine_Aine_2: 456625213785165241
+      Spine_Aine_20: -1668160199315267728
+      Spine_Aine_21: -6099181438978604731
+      Spine_Aine_22: -1150980235285496588
+      Spine_Aine_23: 340300474231003973
+      Spine_Aine_24: -249889721915187541
+      Spine_Aine_25: 483279309424633652
+      Spine_Aine_26: -7654451797243659581
+      Spine_Aine_27: 434357049200455117
+      Spine_Aine_28: -1016779300738289700
+      Spine_Aine_29: -1810426901909055280
+      Spine_Aine_3: 2401679460379420686
+      Spine_Aine_30: -569718356941085167
+      Spine_Aine_31: 3338021588943673157
+      Spine_Aine_32: 648915722981061185
+      Spine_Aine_33: -8794148427318455486
+      Spine_Aine_34: 3934074504843756216
+      Spine_Aine_35: -1230490356860965483
+      Spine_Aine_36: 1881831120053410215
+      Spine_Aine_37: 4732458863557825535
+      Spine_Aine_38: 5821303305412141106
+      Spine_Aine_39: 4613783748344495651
+      Spine_Aine_4: -7043529100984766075
+      Spine_Aine_5: 8319075162191144040
+      Spine_Aine_6: -6913355612855518089
+      Spine_Aine_7: 1424635858171040057
+      Spine_Aine_8: -7716650821464393813
+      Spine_Aine_9: 598001143039344583
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

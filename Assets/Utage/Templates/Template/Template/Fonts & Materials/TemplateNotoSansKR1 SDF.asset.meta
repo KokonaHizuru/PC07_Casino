@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: abe564c4c3528fe4f882215cbbccd0e8
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Templates/Template/Template/Fonts & Materials/TemplateNotoSansKR1
+    SDF.asset
+  uploadId: 852840

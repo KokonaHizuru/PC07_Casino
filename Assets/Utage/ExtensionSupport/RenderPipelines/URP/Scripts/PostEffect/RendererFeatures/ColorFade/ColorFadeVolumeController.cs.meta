@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: c4ae2456f4484e478c1bdc6b3aed7c21
+timeCreated: 1687218808
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/ExtensionSupport/RenderPipelines/URP/Scripts/PostEffect/RendererFeatures/ColorFade/ColorFadeVolumeController.cs
+  uploadId: 852840

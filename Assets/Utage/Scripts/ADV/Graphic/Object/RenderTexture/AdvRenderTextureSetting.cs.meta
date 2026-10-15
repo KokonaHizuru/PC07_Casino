@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 11367f9c17503f64dabd99c54024769f
+timeCreated: 1465216429
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Scripts/ADV/Graphic/Object/RenderTexture/AdvRenderTextureSetting.cs
+  uploadId: 852840

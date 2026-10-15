@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 0a4d763ca2d8419ca7f4be4b533de0c2
+timeCreated: 1690320187
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Scripts/ADV/ScenarioImporter/ScenarioImportPostProcessor/ScenarioImportPostProcessorSettings.cs
+  uploadId: 852840

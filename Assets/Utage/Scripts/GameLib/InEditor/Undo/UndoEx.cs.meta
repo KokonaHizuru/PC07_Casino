@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 4965060f53964f2b9ee3cce3f481644c
+timeCreated: 1689773734
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Scripts/GameLib/InEditor/Undo/UndoEx.cs
+  uploadId: 852840

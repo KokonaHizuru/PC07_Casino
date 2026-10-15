@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 17b4243165d5a1140bc23468cc4d328c
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/ExtensionSupport/RenderPipelines/URP/Editor/Scripts/UtageForUrpEditor.asmdef
+  uploadId: 852840

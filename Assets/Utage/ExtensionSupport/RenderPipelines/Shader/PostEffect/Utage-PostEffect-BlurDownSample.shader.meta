@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 27ce29ad5f0846eaadc4d0d5db6230ba
+timeCreated: 1681325382
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/ExtensionSupport/RenderPipelines/Shader/PostEffect/Utage-PostEffect-BlurDownSample.shader
+  uploadId: 852840

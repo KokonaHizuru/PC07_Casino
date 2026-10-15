@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b071d6e9258044b498464147e4bd631c
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Fonts/CharacterCollections/NotoSansSC/NotoSansSC Character
+    Collection_2of3.txt
+  uploadId: 852840

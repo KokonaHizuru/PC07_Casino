@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: a6d5bc10b314498b80c470358f8276ef
+timeCreated: 1682724978
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Scripts/ADV/ScenarioImporter/InEditor/AdvScenarioImporterInEditor.cs
+  uploadId: 852840

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 0f6088d36db115b4390c928dc01215b4
+timeCreated: 1531456784
+licenseType: Store
+TextScriptImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Scripts/GameLib/iTween/Plugins/ReadMe!/iTweenLicense.txt
+  uploadId: 852840

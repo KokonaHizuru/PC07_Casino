@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: e13dc8da9c3a416cbcd615b5711cfd05
+timeCreated: 1728118640
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/ExtensionSupport/RenderPipelines/URP/Editor/Scripts/UrpRenderPipelineAssetsCreator.cs
+  uploadId: 852840

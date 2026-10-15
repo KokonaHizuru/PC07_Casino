@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: efeb862dd2154d19b567b9a22d2c0cb9
+timeCreated: 1732760755
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Scripts/ADV/Graphic/Object/RenderTexture/RenderTextureCustomPixelsToUnits.cs
+  uploadId: 852840

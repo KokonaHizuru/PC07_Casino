@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: b990ec0a6568484aa55287280517d32b
+timeCreated: 1703856239
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Scripts/GameLib/Font/TextMetricsAdjusterFont.cs
+  uploadId: 852840

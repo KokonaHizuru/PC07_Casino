@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 603ead647cca41fb8a8b0900ad46803d
+timeCreated: 1738717370
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Sample/Scripts/SampleSelectionKeyboardInput.cs
+  uploadId: 852840

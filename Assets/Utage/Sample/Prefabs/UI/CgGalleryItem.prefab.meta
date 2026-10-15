@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: cb49fa321cbb56c4ea5b2507070d7b26
+NativeFormatImporter:
+  userData: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Sample/Prefabs/UI/CgGalleryItem.prefab
+  uploadId: 852840

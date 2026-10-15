@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: d5547c7453b84f4c808bb31d06696d15
+timeCreated: 1681607581
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Scripts/ADV/PostEffectManager/AdvPostEffectManager.cs
+  uploadId: 852840

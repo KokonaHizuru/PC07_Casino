@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: f884b01074254089a78292e86ae58a2c
+timeCreated: 1688678829
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Scripts/GameLib/InEditor/Drawer/GuiDrawerHelper.cs
+  uploadId: 852840

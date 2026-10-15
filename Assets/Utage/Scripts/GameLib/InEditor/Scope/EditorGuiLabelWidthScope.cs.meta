@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: c40b32c25ba34659baf940f88eca85e0
+timeCreated: 1688591085
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Scripts/GameLib/InEditor/Scope/EditorGuiLabelWidthScope.cs
+  uploadId: 852840

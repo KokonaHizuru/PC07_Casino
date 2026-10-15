@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: e393663cbf138b4499478cf503c2f24c
+NativeFormatImporter:
+  userData: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Templates/LegacyTemplate/LegacyTemplate/Prefabs/UI/SoundRoomItem.prefab
+  uploadId: 852840

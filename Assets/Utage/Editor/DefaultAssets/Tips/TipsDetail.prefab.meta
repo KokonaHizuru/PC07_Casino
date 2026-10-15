@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: eb017c5f43bea404e8617087a337a4ec
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Editor/DefaultAssets/Tips/TipsDetail.prefab
+  uploadId: 852840

@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: ed627305feb00da43b9cc3baaa35962a
+timeCreated: 1681055755
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/ExtensionSupport/RenderPipelines/URP/Scripts/PostEffect/RendererFeatures/MotionBlur/MotionBlurRenderFeature.cs
+  uploadId: 852840

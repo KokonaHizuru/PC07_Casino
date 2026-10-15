@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 3a2e89326cda64858a11433ffce27df7
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Sample/UnityChan/2DUnitychan/Animations/UnityChan2D.controller
+  uploadId: 852840

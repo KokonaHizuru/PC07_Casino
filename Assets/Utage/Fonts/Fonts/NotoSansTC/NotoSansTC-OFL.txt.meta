@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: b96f07acee4177340af77e6b54f6df60
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Fonts/Fonts/NotoSansTC/NotoSansTC-OFL.txt
+  uploadId: 852840

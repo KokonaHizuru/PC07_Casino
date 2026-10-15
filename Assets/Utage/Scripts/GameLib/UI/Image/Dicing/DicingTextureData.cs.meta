@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 075876b3fdb9be14e9b8dcff2ff81a56
+timeCreated: 1461986611
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Scripts/GameLib/UI/Image/Dicing/DicingTextureData.cs
+  uploadId: 852840

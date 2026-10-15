@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: d9463fafaa1647d7bc2d5aa0d1082266
+timeCreated: 1694768478
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Scripts/GameLib/CustomProjectSetting/Language/LanguageChangeEventTmpFont.cs
+  uploadId: 852840

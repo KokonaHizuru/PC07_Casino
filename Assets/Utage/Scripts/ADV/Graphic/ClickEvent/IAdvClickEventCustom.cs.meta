@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: d717f21addf840638bf433e74d9ba336
+timeCreated: 1740607624
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Scripts/ADV/Graphic/ClickEvent/IAdvClickEventCustom.cs
+  uploadId: 852840

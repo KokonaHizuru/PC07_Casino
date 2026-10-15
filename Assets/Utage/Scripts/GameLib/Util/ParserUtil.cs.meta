@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 04317787bbec7a64d86716d6979ada9a
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Scripts/GameLib/Util/ParserUtil.cs
+  uploadId: 852840

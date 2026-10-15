@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: ef003c54265c4f64b8fbd220d1dcb2a7
+ShaderImporter:
+  userData: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Resources/Utage-Shader/ImageEffect/Utage-ImageEffect-Vortex.shader
+  uploadId: 852840

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 3f8354b3e91c8be49a8a54cfabae0a63
+timeCreated: 1480500515
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: particle/intensiveline.asset
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Sample/Resources/Sample/Particle/IntensiveLine.prefab
+  uploadId: 852840

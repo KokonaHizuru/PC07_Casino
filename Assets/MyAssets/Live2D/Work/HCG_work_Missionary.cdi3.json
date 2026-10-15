@@ -1,0 +1,182 @@
+{
+	"Version": 3,
+	"Parameters": [
+		{
+			"Id": "Param10",
+			"GroupId": "",
+			"Name": "物理"
+		},
+		{
+			"Id": "Param15",
+			"GroupId": "",
+			"Name": "物理_胸"
+		},
+		{
+			"Id": "Param14",
+			"GroupId": "",
+			"Name": "物理_足"
+		},
+		{
+			"Id": "Param18",
+			"GroupId": "",
+			"Name": "物理_ベッド"
+		},
+		{
+			"Id": "Param12",
+			"GroupId": "",
+			"Name": "Root"
+		},
+		{
+			"Id": "Param",
+			"GroupId": "",
+			"Name": "前髪_中央"
+		},
+		{
+			"Id": "Param2",
+			"GroupId": "",
+			"Name": "前髪_右"
+		},
+		{
+			"Id": "Param3",
+			"GroupId": "",
+			"Name": "前髪_左"
+		},
+		{
+			"Id": "Param4",
+			"GroupId": "",
+			"Name": "前髪_サブ"
+		},
+		{
+			"Id": "Param5",
+			"GroupId": "",
+			"Name": "横髪_右"
+		},
+		{
+			"Id": "Param6",
+			"GroupId": "",
+			"Name": "横髪_左"
+		},
+		{
+			"Id": "Param11",
+			"GroupId": "",
+			"Name": "後ろ髪"
+		},
+		{
+			"Id": "Param7",
+			"GroupId": "",
+			"Name": "胸"
+		},
+		{
+			"Id": "Param13",
+			"GroupId": "",
+			"Name": "足"
+		},
+		{
+			"Id": "Param16",
+			"GroupId": "",
+			"Name": "精子"
+		},
+		{
+			"Id": "Param8",
+			"GroupId": "",
+			"Name": "ふくらはぎ"
+		},
+		{
+			"Id": "Param9",
+			"GroupId": "",
+			"Name": "ちんこ"
+		},
+		{
+			"Id": "Param17",
+			"GroupId": "",
+			"Name": "ベッド"
+		},
+		{
+			"Id": "Param19",
+			"GroupId": "",
+			"Name": "表示_汗"
+		},
+		{
+			"Id": "Param20",
+			"GroupId": "",
+			"Name": "表示_精子"
+		},
+		{
+			"Id": "Param21",
+			"GroupId": "",
+			"Name": "表示_ちんこ"
+		},
+		{
+			"Id": "Param22",
+			"GroupId": "",
+			"Name": "表示_表情"
+		}
+	],
+	"ParameterGroups": [],
+	"Parts": [
+		{
+			"Id": "Part5",
+			"Name": "ちんこ"
+		},
+		{
+			"Id": "Part6",
+			"Name": "表情_4"
+		},
+		{
+			"Id": "Part7",
+			"Name": "表情_3"
+		},
+		{
+			"Id": "Part8",
+			"Name": "表情_2"
+		},
+		{
+			"Id": "Part9",
+			"Name": "表情_1"
+		},
+		{
+			"Id": "Part10",
+			"Name": "精子"
+		},
+		{
+			"Id": "Part16",
+			"Name": "まんこ_上"
+		},
+		{
+			"Id": "Part15",
+			"Name": "まん肉"
+		},
+		{
+			"Id": "Part",
+			"Name": "足_左"
+		},
+		{
+			"Id": "Part2",
+			"Name": "足_右"
+		},
+		{
+			"Id": "Part13",
+			"Name": "胸_汗"
+		},
+		{
+			"Id": "Part3",
+			"Name": "胸_左"
+		},
+		{
+			"Id": "Part4",
+			"Name": "胸_右"
+		},
+		{
+			"Id": "Part14",
+			"Name": "顔_汗"
+		},
+		{
+			"Id": "Part11",
+			"Name": "足_左_汗"
+		},
+		{
+			"Id": "Part12",
+			"Name": "足_右_汗"
+		}
+	]
+}

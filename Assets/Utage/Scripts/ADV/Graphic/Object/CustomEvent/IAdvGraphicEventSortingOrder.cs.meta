@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: e83098cad33a0cd4f96e0e7479abb669
+timeCreated: 1705489983
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Scripts/ADV/Graphic/Object/CustomEvent/IAdvGraphicEventSortingOrder.cs
+  uploadId: 852840

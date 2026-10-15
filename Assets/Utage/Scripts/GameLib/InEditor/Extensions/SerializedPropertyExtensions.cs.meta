@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 2ea834b8fc194573a5fb5826e7abb017
+timeCreated: 1688852322
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Scripts/GameLib/InEditor/Extensions/SerializedPropertyExtensions.cs
+  uploadId: 852840

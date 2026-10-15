@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d17d6817b1f5d9e428b18b3dd40775a7
+timeCreated: 1478928556
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: texture/character/toko.asset
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Sample/Resources/Sample/Texture/Character/Toko.asset
+  uploadId: 852840

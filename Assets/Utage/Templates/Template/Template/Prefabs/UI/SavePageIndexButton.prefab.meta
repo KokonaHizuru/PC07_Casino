@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: aff281856d9345c419721b1fe90cd414
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Templates/Template/Template/Prefabs/UI/SavePageIndexButton.prefab
+  uploadId: 852840

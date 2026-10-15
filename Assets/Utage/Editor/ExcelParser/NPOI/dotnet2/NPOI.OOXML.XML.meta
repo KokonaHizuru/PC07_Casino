@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ed57d05d960b5e940b2632bbcbffc734
+timeCreated: 1444093584
+licenseType: Store
+TextScriptImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Editor/ExcelParser/NPOI/dotnet2/NPOI.OOXML.XML
+  uploadId: 852840

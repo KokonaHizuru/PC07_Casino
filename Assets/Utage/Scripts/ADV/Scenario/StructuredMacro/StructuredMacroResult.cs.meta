@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: cf69c3fb0f4c480996fc377dc7585a21
+timeCreated: 1767477482
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Scripts/ADV/Scenario/StructuredMacro/StructuredMacroResult.cs
+  uploadId: 852840

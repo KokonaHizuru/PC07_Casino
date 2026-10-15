@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: d20ad853d6c046243bc36a1d1e23d68e
+timeCreated: 1459329520
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Scripts/ADV/Extra/AdvAgingTest.cs
+  uploadId: 852840

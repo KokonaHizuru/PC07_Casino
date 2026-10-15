@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: cf34a22bc601410e8034633ac517ce03
+timeCreated: 1753571466
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/ExtensionSupport/RenderPipelines/URP/Editor/Scripts/UrpCameraSwitcherInEditor.cs
+  uploadId: 852840

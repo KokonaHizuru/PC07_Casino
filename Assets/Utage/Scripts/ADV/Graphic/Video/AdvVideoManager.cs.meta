@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 2f1dd44656329564d81a376383c6d644
+timeCreated: 1465215147
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Scripts/ADV/Graphic/Video/AdvVideoManager.cs
+  uploadId: 852840

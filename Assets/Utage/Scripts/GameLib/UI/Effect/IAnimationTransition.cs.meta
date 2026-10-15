@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 5a801e8bb26170f42a3ea7e09f30a91f
+timeCreated: 1465384500
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Scripts/GameLib/UI/Effect/IAnimationTransition.cs
+  uploadId: 852840

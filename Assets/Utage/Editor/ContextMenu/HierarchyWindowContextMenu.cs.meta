@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 5de996c9ce8b8a24c9adc62448941f46
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Editor/ContextMenu/HierarchyWindowContextMenu.cs
+  uploadId: 852840

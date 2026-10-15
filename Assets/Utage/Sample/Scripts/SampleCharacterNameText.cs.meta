@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 0715926ee40c4aaa9ab21e4ba769e883
+timeCreated: 1751179746
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Sample/Scripts/SampleCharacterNameText.cs
+  uploadId: 852840

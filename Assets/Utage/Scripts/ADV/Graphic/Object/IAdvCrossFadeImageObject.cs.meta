@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: d38267a585864e6ebee81323287178ef
+timeCreated: 1595875592
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Scripts/ADV/Graphic/Object/IAdvCrossFadeImageObject.cs
+  uploadId: 852840

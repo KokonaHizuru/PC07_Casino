@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 92a508b55da233c43b79a9647b12a9ef
+timeCreated: 1457327582
+licenseType: Store
+DefaultImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/SampleOthers/SampleChapter0AndOther/SampleChapter0/Chapter0.xls
+  uploadId: 852840

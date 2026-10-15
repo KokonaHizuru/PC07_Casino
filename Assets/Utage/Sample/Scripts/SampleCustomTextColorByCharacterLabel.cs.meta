@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: f488abdc5adaff748abda77204262aa5
+timeCreated: 1731515340
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Sample/Scripts/SampleCustomTextColorByCharacterLabel.cs
+  uploadId: 852840

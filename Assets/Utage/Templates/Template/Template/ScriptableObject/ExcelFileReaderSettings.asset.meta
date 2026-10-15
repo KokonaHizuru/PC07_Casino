@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: f4287aba8b2d3484eb85043b7600fd9a
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Templates/Template/Template/ScriptableObject/ExcelFileReaderSettings.asset
+  uploadId: 852840

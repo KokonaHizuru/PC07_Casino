@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: db8141f5443b11f4d883167b6c8b28d7
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Scripts/GameLib/Effect/MotionPlayType.cs
+  uploadId: 852840

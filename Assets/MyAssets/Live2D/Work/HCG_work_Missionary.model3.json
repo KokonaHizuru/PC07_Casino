@@ -1,0 +1,23 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "HCG_work_Missionary.moc3",
+		"Textures": [
+			"HCG_work_Missionary.4096/texture_00.png"
+		],
+		"Physics": "HCG_work_Missionary.physics3.json",
+		"DisplayInfo": "HCG_work_Missionary.cdi3.json"
+	},
+	"Groups": [
+		{
+			"Target": "Parameter",
+			"Name": "EyeBlink",
+			"Ids": []
+		},
+		{
+			"Target": "Parameter",
+			"Name": "LipSync",
+			"Ids": []
+		}
+	]
+}

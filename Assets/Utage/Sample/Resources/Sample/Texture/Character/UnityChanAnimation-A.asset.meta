@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 470136e6083f89c45852ecb4bad0fe4b
+timeCreated: 1471999716
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: texture/character/unitychananimation-a.asset
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Sample/Resources/Sample/Texture/Character/UnityChanAnimation-A.asset
+  uploadId: 852840

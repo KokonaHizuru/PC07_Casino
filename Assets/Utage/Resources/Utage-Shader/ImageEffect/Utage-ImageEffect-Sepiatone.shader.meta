@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: ad2baae46d1912b45a55a0020fbb4f3a
+ShaderImporter:
+  userData: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Resources/Utage-Shader/ImageEffect/Utage-ImageEffect-Sepiatone.shader
+  uploadId: 852840

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c71240612306f034daf53163ba6efbea
+timeCreated: 1473799063
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: texture/character/2dunitychan.asset
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Sample/Resources/Sample/Texture/Character/2DUnitychan.prefab
+  uploadId: 852840

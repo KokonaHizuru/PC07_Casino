@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 98b0c0f387bc1ff42912eaaca7e8173f
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Editor/DefaultAssets/Tips/TipsListButton.prefab
+  uploadId: 852840

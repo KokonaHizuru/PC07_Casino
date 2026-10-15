@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: ed74ddd10b7443769857da30f6062257
+timeCreated: 1687586178
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Scripts/GameLib/Math/MinMax.cs
+  uploadId: 852840

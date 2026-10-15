@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 901c892a131b4562ac1836476067f042
+timeCreated: 1688950963
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Scripts/GameLib/InEditor/Drawer/Decroator/HyperLinkAttribute.cs
+  uploadId: 852840

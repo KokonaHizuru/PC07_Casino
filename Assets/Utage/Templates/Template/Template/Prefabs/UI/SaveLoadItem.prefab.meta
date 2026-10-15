@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: 31e962b177a84c54689ec10614af9014
+NativeFormatImporter:
+  userData: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Templates/Template/Template/Prefabs/UI/SaveLoadItem.prefab
+  uploadId: 852840

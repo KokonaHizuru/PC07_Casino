@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 6461147025b38184ba174b775b2ec9a1
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Sample/ParticleExamples/IntensiveLine.mat
+  uploadId: 852840

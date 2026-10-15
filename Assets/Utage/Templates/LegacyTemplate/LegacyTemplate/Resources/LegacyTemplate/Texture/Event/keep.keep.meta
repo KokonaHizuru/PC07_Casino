@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c4a77885975b9ac4d9d3a7583f118050
+timeCreated: 1454392890
+licenseType: Store
+DefaultImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Templates/LegacyTemplate/LegacyTemplate/Resources/LegacyTemplate/Texture/Event/keep.keep
+  uploadId: 852840

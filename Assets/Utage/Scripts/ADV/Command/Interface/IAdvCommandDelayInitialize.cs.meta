@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: ec0222a02d4c4770b53a5240618ed635
+timeCreated: 1708324144
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Scripts/ADV/Command/Interface/IAdvCommandDelayInitialize.cs
+  uploadId: 852840

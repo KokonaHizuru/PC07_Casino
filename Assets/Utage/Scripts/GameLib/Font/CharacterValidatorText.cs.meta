@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 42fab5e6bc82412a8540c0dc27a13e2e
+timeCreated: 1694868315
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Scripts/GameLib/Font/CharacterValidatorText.cs
+  uploadId: 852840

@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 42998c646b166284a82d614774980b7f
+timeCreated: 1681055755
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/ExtensionSupport/RenderPipelines/URP/Scripts/PostEffect/RendererFeatures/Mosaic/MosaicRenderFeature.cs
+  uploadId: 852840

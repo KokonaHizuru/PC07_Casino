@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 313f86d54b6c6b74baf56a35e75e8914
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Scripts/GameLib/UI/NovelText/LegacyText/UguiNovelTextSettings.cs
+  uploadId: 852840

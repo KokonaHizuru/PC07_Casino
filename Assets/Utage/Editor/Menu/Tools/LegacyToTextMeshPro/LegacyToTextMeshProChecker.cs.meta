@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 5845404771074b468fd08bd2ab720a35
+timeCreated: 1702454745
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Editor/Menu/Tools/LegacyToTextMeshPro/LegacyToTextMeshProChecker.cs
+  uploadId: 852840

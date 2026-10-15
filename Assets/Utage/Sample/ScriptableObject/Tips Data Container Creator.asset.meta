@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 7c8b390443148d844834169e3b8a747e
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Sample/ScriptableObject/Tips Data Container Creator.asset
+  uploadId: 852840

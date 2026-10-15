@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 72f0702a160537d4fbaa79fd85413187
+DefaultImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Sample/UnityChan/SD_unitychan/Scenes/SD_unitychan_Humanoid.unity
+  uploadId: 852840

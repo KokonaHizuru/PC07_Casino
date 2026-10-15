@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: e470c57552164dc798195c2c5a820ce3
+timeCreated: 1689492004
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266447
+  packageName: UTAGE4 for Unity Text Adventure Game Engine Version4
+  packageVersion: 4.2.6
+  assetPath: Assets/Utage/Scripts/GameLib/UI/TextMeshPro/HideIfTMPAttribute.cs
+  uploadId: 852840
