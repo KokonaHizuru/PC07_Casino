@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: f7b0b6cdcb8e6d747b02ec5ac1c3cce8
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 152919
+  packageName: Casino
+  packageVersion: 1.3
+  assetPath: Assets/Casino/OldRP/Materials/CRTable/FieldTWLine.mat
+  uploadId: 415832

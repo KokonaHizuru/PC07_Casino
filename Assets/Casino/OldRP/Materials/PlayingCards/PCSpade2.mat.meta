@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 2335ac505b6dccd4b878d38b175f62af
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 152919
+  packageName: Casino
+  packageVersion: 1.3
+  assetPath: Assets/Casino/OldRP/Materials/PlayingCards/PCSpade2.mat
+  uploadId: 415832

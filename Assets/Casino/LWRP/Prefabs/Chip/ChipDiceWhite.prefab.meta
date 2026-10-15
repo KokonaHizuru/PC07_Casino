@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 3c424a9154e4b0b4090c7a5779d8f208
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 152919
+  packageName: Casino
+  packageVersion: 1.3
+  assetPath: Assets/Casino/LWRP/Prefabs/Chip/ChipDiceWhite.prefab
+  uploadId: 415832

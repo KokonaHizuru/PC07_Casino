@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 85641e0351c81ea4b82f659096043d6e
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 152919
+  packageName: Casino
+  packageVersion: 1.3
+  assetPath: Assets/Casino/LWRP/Material/ChipSquare1_L.mat
+  uploadId: 415832

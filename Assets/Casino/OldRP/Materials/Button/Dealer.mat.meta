@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 6e55b0871d4ee5544b47df0ce2baa0ac
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 152919
+  packageName: Casino
+  packageVersion: 1.3
+  assetPath: Assets/Casino/OldRP/Materials/Button/Dealer.mat
+  uploadId: 415832

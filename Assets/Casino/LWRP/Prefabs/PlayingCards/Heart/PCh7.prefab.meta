@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 2ff364d2a9d3f634b94ff941e94cb3ed
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 152919
+  packageName: Casino
+  packageVersion: 1.3
+  assetPath: Assets/Casino/LWRP/Prefabs/PlayingCards/Heart/PCh7.prefab
+  uploadId: 415832

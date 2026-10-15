@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 0014a432b763f9d4c80712cf431bee1b
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 152919
+  packageName: Casino
+  packageVersion: 1.3
+  assetPath: Assets/Casino/LWRP/Prefabs/CRTable/CRTableOval.prefab
+  uploadId: 415832

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 012850010a0997e4ca3e452479ad3f49
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 152919
+  packageName: Casino
+  packageVersion: 1.3
+  assetPath: Assets/Casino/LWRP/Prefabs/CRTable/CRTableStraight10Block.prefab
+  uploadId: 415832

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 448e726d469c6be48a6dbc3225932193
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 152919
+  packageName: Casino
+  packageVersion: 1.3
+  assetPath: Assets/Casino/OldRP/Prefabs/PlayingCards/Diamond/PCd8.prefab
+  uploadId: 415832

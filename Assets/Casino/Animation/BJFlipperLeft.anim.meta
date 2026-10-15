@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 2cb6d2590a8360a49ba3c152463d3c91
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 152919
+  packageName: Casino
+  packageVersion: 1.3
+  assetPath: Assets/Casino/Animation/BJFlipperLeft.anim
+  uploadId: 415832

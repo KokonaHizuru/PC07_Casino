@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 398a248824c3ea24e9063174d41152da
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 152919
+  packageName: Casino
+  packageVersion: 1.3
+  assetPath: Assets/Casino/OldRP/Materials/PlayingCards/PCClub.mat
+  uploadId: 415832

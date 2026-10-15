@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: baac96e16150d6e4e9c110841195c9ae
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 152919
+  packageName: Casino
+  packageVersion: 1.3
+  assetPath: Assets/Casino/LWRP/Prefabs/CRTable/CRTableFeltOval.prefab
+  uploadId: 415832

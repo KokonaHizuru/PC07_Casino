@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 20256dcdd06dd944aa55fefb0f1927fc
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 152919
+  packageName: Casino
+  packageVersion: 1.3
+  assetPath: Assets/Casino/LWRP/Prefabs/Button/ButtonDealer.prefab
+  uploadId: 415832

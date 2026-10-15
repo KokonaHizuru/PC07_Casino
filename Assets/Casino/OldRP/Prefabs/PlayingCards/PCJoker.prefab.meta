@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 2a3fbd5bceff92741b15cce5e13e1beb
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 152919
+  packageName: Casino
+  packageVersion: 1.3
+  assetPath: Assets/Casino/OldRP/Prefabs/PlayingCards/PCJoker.prefab
+  uploadId: 415832

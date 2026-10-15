@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: b6eaa539af1b24148afd24660167bf5c
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 152919
+  packageName: Casino
+  packageVersion: 1.3
+  assetPath: Assets/Casino/OldRP/Prefabs/Chip/chipsquareRed.prefab
+  uploadId: 415832

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 19c87255050538242854f61b3c1dc5e9
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 152919
+  packageName: Casino
+  packageVersion: 1.3
+  assetPath: Assets/Casino/LWRP/Prefabs/PlayingCards/Spade/PCs2.prefab
+  uploadId: 415832

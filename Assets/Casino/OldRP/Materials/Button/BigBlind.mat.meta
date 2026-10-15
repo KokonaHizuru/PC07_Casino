@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 37fc4e4f455e4d847aed5cd72614f3b0
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 152919
+  packageName: Casino
+  packageVersion: 1.3
+  assetPath: Assets/Casino/OldRP/Materials/Button/BigBlind.mat
+  uploadId: 415832

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: dc8ba1a2ba5707345869e075c0c8ba2e
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 152919
+  packageName: Casino
+  packageVersion: 1.3
+  assetPath: Assets/Casino/LWRP/Prefabs/ChipCaseWood.prefab
+  uploadId: 415832

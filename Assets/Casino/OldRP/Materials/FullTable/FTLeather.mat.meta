@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 61309fa7e1a96f04e97f75ed3a857da2
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 152919
+  packageName: Casino
+  packageVersion: 1.3
+  assetPath: Assets/Casino/OldRP/Materials/FullTable/FTLeather.mat
+  uploadId: 415832

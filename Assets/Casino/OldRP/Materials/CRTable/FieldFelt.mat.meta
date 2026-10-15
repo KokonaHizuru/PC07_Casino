@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: fd2cdf63c529dc14288489ba877b45df
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 152919
+  packageName: Casino
+  packageVersion: 1.3
+  assetPath: Assets/Casino/OldRP/Materials/CRTable/FieldFelt.mat
+  uploadId: 415832

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 108ad133d7e5e584090818c4a8676285
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 152919
+  packageName: Casino
+  packageVersion: 1.3
+  assetPath: Assets/Casino/LWRP/Prefabs/BaccaratTable/BaccaratTable.prefab
+  uploadId: 415832

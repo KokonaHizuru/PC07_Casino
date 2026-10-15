@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 0395196943cb04f4da535a1ca4ca4fae
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 152919
+  packageName: Casino
+  packageVersion: 1.3
+  assetPath: Assets/Casino/OldRP/Prefabs/PlayingCards/PCdeck.prefab
+  uploadId: 415832

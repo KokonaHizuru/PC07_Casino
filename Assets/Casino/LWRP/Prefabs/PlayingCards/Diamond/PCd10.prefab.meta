@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 7345ce682f9d5e64a93aea6e9dcbc669
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 152919
+  packageName: Casino
+  packageVersion: 1.3
+  assetPath: Assets/Casino/LWRP/Prefabs/PlayingCards/Diamond/PCd10.prefab
+  uploadId: 415832

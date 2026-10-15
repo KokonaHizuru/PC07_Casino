@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 44717f56611f4e143b8acf2e05a9ac5b
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 152919
+  packageName: Casino
+  packageVersion: 1.3
+  assetPath: Assets/Casino/LWRP/Material/HalfTable_L/BaccaratTW_L.mat
+  uploadId: 415832

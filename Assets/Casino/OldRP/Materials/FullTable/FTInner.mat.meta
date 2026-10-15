@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d86cbc606aba50146a678f4771fa9f96
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 152919
+  packageName: Casino
+  packageVersion: 1.3
+  assetPath: Assets/Casino/OldRP/Materials/FullTable/FTInner.mat
+  uploadId: 415832

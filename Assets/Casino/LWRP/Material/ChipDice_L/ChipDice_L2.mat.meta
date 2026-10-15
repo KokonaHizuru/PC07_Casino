@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e1a082d85c695304f81596d1b5fe600c
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 152919
+  packageName: Casino
+  packageVersion: 1.3
+  assetPath: Assets/Casino/LWRP/Material/ChipDice_L/ChipDice_L2.mat
+  uploadId: 415832

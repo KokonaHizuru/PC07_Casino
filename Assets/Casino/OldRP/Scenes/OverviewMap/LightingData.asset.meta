@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: eaad2159d64f607438f1f476cdd4bafb
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 112000000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 152919
+  packageName: Casino
+  packageVersion: 1.3
+  assetPath: Assets/Casino/OldRP/Scenes/OverviewMap/LightingData.asset
+  uploadId: 415832

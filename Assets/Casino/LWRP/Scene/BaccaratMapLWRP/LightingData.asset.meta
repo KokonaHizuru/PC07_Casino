@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: fabf29ca671112c429f3df7987f9fe53
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 112000000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 152919
+  packageName: Casino
+  packageVersion: 1.3
+  assetPath: Assets/Casino/LWRP/Scene/BaccaratMapLWRP/LightingData.asset
+  uploadId: 415832

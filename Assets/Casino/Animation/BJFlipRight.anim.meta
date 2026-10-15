@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 786bbdb4eb2c436499bc9d2b26305f08
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 152919
+  packageName: Casino
+  packageVersion: 1.3
+  assetPath: Assets/Casino/Animation/BJFlipRight.anim
+  uploadId: 415832

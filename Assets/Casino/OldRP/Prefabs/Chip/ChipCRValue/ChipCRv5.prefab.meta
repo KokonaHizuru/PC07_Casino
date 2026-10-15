@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: faeccf8ed77436a459288588a2c698b4
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 152919
+  packageName: Casino
+  packageVersion: 1.3
+  assetPath: Assets/Casino/OldRP/Prefabs/Chip/ChipCRValue/ChipCRv5.prefab
+  uploadId: 415832

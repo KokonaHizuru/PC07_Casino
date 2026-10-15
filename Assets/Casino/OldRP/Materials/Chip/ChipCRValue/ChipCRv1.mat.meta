@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 039ff30919e96d34f999dc98114f430f
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 152919
+  packageName: Casino
+  packageVersion: 1.3
+  assetPath: Assets/Casino/OldRP/Materials/Chip/ChipCRValue/ChipCRv1.mat
+  uploadId: 415832

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: cca1a6efd0590fc4783c2cbf40029b62
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 152919
+  packageName: Casino
+  packageVersion: 1.3
+  assetPath: Assets/Casino/OldRP/Materials/CRTable/CRTWood.mat
+  uploadId: 415832

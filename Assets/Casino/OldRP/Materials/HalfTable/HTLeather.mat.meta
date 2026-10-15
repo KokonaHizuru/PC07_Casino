@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 03c1b059bd082924f941c42743ddea4a
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 152919
+  packageName: Casino
+  packageVersion: 1.3
+  assetPath: Assets/Casino/OldRP/Materials/HalfTable/HTLeather.mat
+  uploadId: 415832

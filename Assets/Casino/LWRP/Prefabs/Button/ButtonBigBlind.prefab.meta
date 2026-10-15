@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: f59bd3af86387d94d902554d60096579
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 152919
+  packageName: Casino
+  packageVersion: 1.3
+  assetPath: Assets/Casino/LWRP/Prefabs/Button/ButtonBigBlind.prefab
+  uploadId: 415832

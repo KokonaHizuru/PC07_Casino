@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d9cf38d9369a1c743b8b5f74055b6c46
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 152919
+  packageName: Casino
+  packageVersion: 1.3
+  assetPath: Assets/Casino/OldRP/Materials/Chip/ChipDice/ChipDice5.mat
+  uploadId: 415832

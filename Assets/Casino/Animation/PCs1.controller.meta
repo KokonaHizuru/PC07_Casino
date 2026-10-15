@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a4fc7461ed2034d4ab78649424a5f9a6
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 152919
+  packageName: Casino
+  packageVersion: 1.3
+  assetPath: Assets/Casino/Animation/PCs1.controller
+  uploadId: 415832

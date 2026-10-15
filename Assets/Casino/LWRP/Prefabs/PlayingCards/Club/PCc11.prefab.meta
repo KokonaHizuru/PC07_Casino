@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: df5490c6983857549abc38af7aa57a23
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 152919
+  packageName: Casino
+  packageVersion: 1.3
+  assetPath: Assets/Casino/LWRP/Prefabs/PlayingCards/Club/PCc11.prefab
+  uploadId: 415832

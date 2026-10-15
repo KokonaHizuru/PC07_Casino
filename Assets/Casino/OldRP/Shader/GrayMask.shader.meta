@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 435a1baa54d8402498a61d3de3588bbb
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 152919
+  packageName: Casino
+  packageVersion: 1.3
+  assetPath: Assets/Casino/OldRP/Shader/GrayMask.shader
+  uploadId: 415832

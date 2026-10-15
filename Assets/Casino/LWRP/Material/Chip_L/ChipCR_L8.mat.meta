@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a8450385175742844bcd22bc54bdec7b
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 152919
+  packageName: Casino
+  packageVersion: 1.3
+  assetPath: Assets/Casino/LWRP/Material/Chip_L/ChipCR_L8.mat
+  uploadId: 415832

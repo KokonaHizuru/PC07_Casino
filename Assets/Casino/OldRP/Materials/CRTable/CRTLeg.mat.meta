@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 13837c5fca706f4499bde01bf530fb11
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 152919
+  packageName: Casino
+  packageVersion: 1.3
+  assetPath: Assets/Casino/OldRP/Materials/CRTable/CRTLeg.mat
+  uploadId: 415832

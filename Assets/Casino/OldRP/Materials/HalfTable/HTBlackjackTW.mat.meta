@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: fd4d5e7855f693045b72af0b315a80bf
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 152919
+  packageName: Casino
+  packageVersion: 1.3
+  assetPath: Assets/Casino/OldRP/Materials/HalfTable/HTBlackjackTW.mat
+  uploadId: 415832

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 5289a538367a27c48ac84e2ce5087831
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 152919
+  packageName: Casino
+  packageVersion: 1.3
+  assetPath: Assets/Casino/LWRP/Prefabs/FullTable/FullTableFelt.prefab
+  uploadId: 415832

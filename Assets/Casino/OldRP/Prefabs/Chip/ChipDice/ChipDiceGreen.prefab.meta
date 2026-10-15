@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 6872dc2a99afd35408214183cf362c16
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 152919
+  packageName: Casino
+  packageVersion: 1.3
+  assetPath: Assets/Casino/OldRP/Prefabs/Chip/ChipDice/ChipDiceGreen.prefab
+  uploadId: 415832

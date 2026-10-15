@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ced8768b2fa1bff41833b15a71452a0e
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 152919
+  packageName: Casino
+  packageVersion: 1.3
+  assetPath: Assets/Casino/Animation/FlipBackward.anim
+  uploadId: 415832

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: e0f233e6f3cb94741962080df6aadd59
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 152919
+  packageName: Casino
+  packageVersion: 1.3
+  assetPath: Assets/Casino/LWRP/Scene/PokerMapLWRP.unity
+  uploadId: 415832

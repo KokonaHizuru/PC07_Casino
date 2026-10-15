@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b77b74664818e3446a1598f9c59eb94f
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 152919
+  packageName: Casino
+  packageVersion: 1.3
+  assetPath: Assets/Casino/OldRP/Materials/PlayingCards/PCDeck.mat
+  uploadId: 415832

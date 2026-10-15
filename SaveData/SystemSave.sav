@@ -1,0 +1,27 @@
+{
+	"SaveData" : {
+		"__type" : "SystemData,Assembly-CSharp",
+		"value" : {
+			"soundData" : {
+				"masterVolume" : 1,
+				"bgmVolume" : 1,
+				"systemSeVolume" : 1,
+				"hSeVolume" : 1,
+				"seVolume" : 1
+			},
+			"windowData" : {
+				"windowHight" : 1600,
+				"windowWidth" : 900,
+				"isFullScreen" : false
+			},
+			"flagData" : {
+				"boolFlag" : {
+				},
+				"intFlag" : {
+				},
+				"floatFlag" : {
+				}
+			}
+		}
+	}
+}

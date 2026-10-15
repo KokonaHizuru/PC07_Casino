@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 4f523c07ae70ccb4683730d2f3bf31f5
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 152919
+  packageName: Casino
+  packageVersion: 1.3
+  assetPath: Assets/Casino/OldRP/Shader/ChipValuePrinted.shader
+  uploadId: 415832

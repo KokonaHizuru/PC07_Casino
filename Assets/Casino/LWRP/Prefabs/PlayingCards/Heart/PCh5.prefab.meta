@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 27b5d7639ba5f154bbd2f4ac0ebdb425
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 152919
+  packageName: Casino
+  packageVersion: 1.3
+  assetPath: Assets/Casino/LWRP/Prefabs/PlayingCards/Heart/PCh5.prefab
+  uploadId: 415832
