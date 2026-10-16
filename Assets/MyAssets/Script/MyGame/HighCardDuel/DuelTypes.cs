@@ -48,16 +48,7 @@ namespace Casino.HighCardDuel
     }
 
     /// <summary>保存先から独立した資金処理の接続口。</summary>
-    public interface IDuelWallet
-    {
-        long Balance { get; }
-        /// <summary>所持金が足りる場合だけ支払う。</summary>
-        /// <param name="amount">支払額。</param>
-        bool TryDebit(long amount);
-        /// <summary>精算額を所持金へ加算する。</summary>
-        /// <param name="amount">受取額。</param>
-        void Credit(long amount);
-    }
+    public interface IDuelWallet : Casino.Common.ICasinoWallet { }
 
     /// <summary>未公開カードを含まないディーラーの判断材料。</summary>
     public readonly struct DealerDecisionContext

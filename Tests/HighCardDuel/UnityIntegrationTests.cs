@@ -106,7 +106,7 @@ public sealed class DuelIntegrationRunner : MonoBehaviour
         float deadline = Time.realtimeSinceStartup + 10;
         while (controller.Game.State != DuelState.SelectingCard) { Check(Time.realtimeSinceStartup < deadline, "Deal timeout"); yield return null; }
         Check(player.Count == 3 && dealer.Count == 3 && data.casinoMoney == 0, "Deal integration");
-        for (int i = 0; i < 3; i++) Check(!player.GetCard(i).FaceUp && !dealer.GetCard(i).FaceUp, "Hidden hands");
+        for (int i = 0; i < 3; i++) Check(player.GetCard(i).FaceUp && !dealer.GetCard(i).FaceUp, "Player hand visible, dealer hand hidden");
         Check(player.GetCard(0).Rect.anchoredPosition.y == -18 && player.GetCard(1).Rect.anchoredPosition.y == 0, "Hand curve missing");
         Check(Quaternion.Angle(player.GetCard(0).Rect.localRotation, Quaternion.Euler(0, 0, 8)) < .01f, "Left fan angle");
         Check(Quaternion.Angle(player.GetCard(2).Rect.localRotation, Quaternion.Euler(0, 0, -8)) < .01f, "Right fan angle");

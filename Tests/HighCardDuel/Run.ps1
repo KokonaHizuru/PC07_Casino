@@ -12,7 +12,7 @@ foreach ($name in @('mscorlib.dll', 'System.dll', 'System.Core.dll')) {
 $engineDll = Join-Path $UnityDataPath 'Managed/UnityEngine/UnityEngine.CoreModule.dll'
 $arguments += '-r:"' + $engineDll + '"'
 $arguments += '-r:"' + (Join-Path $UnityDataPath 'MonoBleedingEdge/lib/mono/net_4_x-win32/Facades/netstandard.dll') + '"'
-$arguments += @('Assets/MyAssets/Script/MyGame/Cards/PlayingCard.cs', 'Assets/MyAssets/Script/MyGame/Cards/CardDeck.cs',
+$arguments += @('Assets/MyAssets/Script/MyGame/Common/ICasinoWallet.cs', 'Assets/MyAssets/Script/MyGame/Cards/PlayingCard.cs', 'Assets/MyAssets/Script/MyGame/Cards/CardDeck.cs',
     'Assets/MyAssets/Script/MyGame/HighCardDuel/DuelTypes.cs', 'Assets/MyAssets/Script/MyGame/HighCardDuel/HighCardDealer.cs',
     'Assets/MyAssets/Script/MyGame/HighCardDuel/HighCardDuelGame.cs', 'Tests/HighCardDuel/LogicTests.cs')
 $responsePath = Join-Path $testOutput 'tests.rsp'

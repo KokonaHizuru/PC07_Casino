@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b24907bc5c44490a9917acdf9a87360c, type: 3}
+  m_Name: BeforeDoubleDown
+  m_EditorClassIdentifier: Assembly-CSharp::Casino.Blackjack.BlackjackPresentationEvent
+  eventEnabled: 0
+  timing: 5
+  stage: 0
+  actor: 1
+  action: 3
+  result: 0
+  oncePerRound: 0
+  cameraView: 0
+  scenarioLabel: 

@@ -69,13 +69,13 @@ namespace Casino.HighCardDuel
         /// <summary>外部の資金補充後に保留中の支払いを再開する。</summary>
         public bool ResumeAfterFunding() => isActiveAndEnabled && Game != null && Game.ResumeAfterFunding();
 
-        /// <summary>裏向きの手札からドロップされたカードをゲームへ渡す。</summary>
+        /// <summary>プレイヤーの表向き手札からドロップされたカードをゲームへ渡す。</summary>
         /// <param name="card">選択したカード。</param>
         private void OnCardPlayed(PlayingCard card)
         {
             if (isActiveAndEnabled && Game != null && Game.SelectCard(card)) return;
             // 状態が切り替わった直後などに拒否された場合、UIだけがカードを失わないよう戻す。
-            if (playerHand != null) playerHand.AddCard(card, false);
+            if (playerHand != null) playerHand.AddCard(card, true);
         }
 
         /// <summary>ゲーム状態に合わせて入力可否を更新し、外部UIへ通知する。</summary>
@@ -100,42 +100,18 @@ namespace Casino.HighCardDuel
         /// <param name="cue">演出情報。</param>
         private IEnumerator RunPresentation(DuelCue cue)
         {
-            var stack = new Stack<IEnumerator>();
-            stack.Push(Present(cue));
+            bool failed = false;
             try
             {
-                while (stack.Count > 0)
+                yield return Casino.Common.PresentationRoutine.Run(Present(cue), exception =>
                 {
-                    object yielded = null;
-                    Exception failure = null;
-                    try
-                    {
-                        IEnumerator current = stack.Peek();
-                        if (!current.MoveNext())
-                        {
-                            stack.Pop();
-                            (current as IDisposable)?.Dispose();
-                            continue;
-                        }
-                        yielded = current.Current;
-                    }
-                    catch (Exception exception) { failure = exception; }
-                    if (failure != null)
-                    {
-                        Debug.LogException(failure, this);
-                        PresentationFailed?.Invoke(failure);
-                        yield break;
-                    }
-                    if (yielded is IEnumerator nested && !(yielded is CustomYieldInstruction)) stack.Push(nested);
-                    else yield return yielded;
-                }
+                    failed = true;
+                    Debug.LogException(exception, this);
+                    PresentationFailed?.Invoke(exception);
+                });
             }
-            finally
-            {
-                presentationRunning = false;
-                while (stack.Count > 0) (stack.Pop() as IDisposable)?.Dispose();
-            }
-            Game.CompletePresentation(cue.Id);
+            finally { presentationRunning = false; }
+            if (!failed) Game.CompletePresentation(cue.Id);
         }
 
         /// <summary>手札を同期し、通知と登録順の演出処理を実行する。</summary>
@@ -167,7 +143,7 @@ namespace Casino.HighCardDuel
             }
             else if (cue.Timing == DuelTiming.CardsDealt)
             {
-                if (playerHand != null) foreach (PlayingCard card in Game.PlayerHand) playerHand.AddCard(card, false);
+                if (playerHand != null) foreach (PlayingCard card in Game.PlayerHand) playerHand.AddCard(card, true);
                 if (dealerHand != null) foreach (PlayingCard card in Game.DealerHand) dealerHand.AddCard(card, false);
             }
             else if (cue.Timing == DuelTiming.CardSelected && cue.Card.HasValue)

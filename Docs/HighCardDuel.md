@@ -1,5 +1,7 @@
 # ハイカード・デュエル：ロジックと演出の接続
 
+2026-10-16：ブラックジャック追加に伴い、資金接続、カードモデル、机上配置、カメラ／手札退避、宴の待機、演出コルーチンの実行を `MyGame/Common` に共通化した。既存のDuelコンポーネントは互換ラッパーとして残し、既存シーンの参照やInspector設定を引き継ぐ。ゲーム固有のルール・SOイベントは分離している。共通部分の一覧は `Blackjack.md` を参照。
+
 スクリプトは `Assets/MyAssets/Script/MyGame/HighCardDuel`、名前空間は `Casino.HighCardDuel`。
 ゲームロジック、UI手札、Casinoの3Dカード配置・Flip、Cinemachine視点切替、SOによる宴イベントと演出完了待ちを実装。Scene_HightAndLowから確認用ラウンドを実行できる。
 
@@ -16,7 +18,7 @@
 
 ## 確定した進行
 
-開始演出 → 双方のInitial Bet → 各3枚を裏向きで配布 → プレイヤーが1枚をドラッグして選択 → プレイヤーとディーラーのカードを公開 → ディーラー先手のBET。
+開始演出 → 双方のInitial Bet → 各3枚を配布（プレイヤー手札は表向き、ディーラー手札は裏向き） → プレイヤーが1枚をドラッグして選択 → プレイヤーとディーラーのカードを場へ公開 → ディーラー先手のBET。自分の手札が見えていても、場へ出す前は公開点数やディーラーの判断情報に含めない。
 
 | ディーラー先手 | プレイヤーの応答 | 続き |
 |---|---|---|
@@ -49,7 +51,7 @@ controller.StartRound(initialBet);
 
 ## 3D演出シーンの使い方
 
-`Scene_HightAndLow`を再生し、裏向きの手札を画面中央の`PlayArea`へドラッグする。選択カードがCasinoの3Dモデルとして机上へ移動し、俯瞰視点で公開・比較する。BET時は通常視点へ戻る。Check/Raise/Call/Foldのうち現在有効なボタンを押し、決着後はNext Roundで再開する。
+`Scene_HightAndLow`を再生し、表向きの自分の手札から選んだカードを画面中央の`PlayArea`へドラッグする。ディーラーの手札は裏向きのまま。選択カードがCasinoの3Dモデルとして机上へ移動し、俯瞰視点で公開・比較する。BET時は通常視点へ戻る。Check/Raise/Call/Foldのうち現在有効なボタンを押し、決着後はNext Roundで再開する。
 
 確認用の`DuelSceneUI.Preview Mode`は有効。所持金1000・Initial Bet10はInspectorで変更できる独立したテスト値で、保存データへ反映しない。Resume Fundsは不足分だけをテスト資金に補充する。本番に接続するときはPreview Modeを無効にして既存のGameInstance.playerDataを使うか、この起動UIを外して外部からControllerを初期化する。本番モードのResume Fundsは外部で補充された資金での再開だけを試みる。
 
@@ -63,6 +65,19 @@ controller.StartRound(initialBet);
 俯瞰視点への切り替えでは、プレイヤー手札を下、ディーラー手札を上へ画面外まで退避する。通常視点へ戻すと手札の元の位置へ戻る。`HighCardDuelPresentation`の`DuelCameraRig`で`Hand Slide Duration`（初期値0.35秒）と`Hidden Padding`（画面外の余白、初期値40）を調整できる。手札の移動先はCanvasと手札全体の範囲から算出するため、PlayerHandのPos Yを変更しても対応する。SOからの視点変更にも同じ退避処理が適用される。
 
 3Dカード52枚は`Assets/MyAssets/HighCardDuel/CasinoCardModels.asset`でCasinoの既存プレハブを参照する。実行時にパス検索は行わない。机は既存のCRTableOvalを使用する。
+
+### カメラ背景の色と光
+
+`Main Camera`の`Skybox`コンポーネントに`RedCameraBackground`を設定している。Material欄から選択するか、`Assets/MyAssets/HighCardDuel/RedCameraBackground.mat`を選び、Inspectorで調整する。表示確認はGameビューまたはCamera Previewを使う。
+
+- `Bottom Color` / `Top Color`：下側の暗い赤と上側の赤。
+- `Gradient Curve`：上下の色の変わり方。1が均等、大きいほど下側の色が長く残る。
+- `Top Light Color`：上端に重ねる照明色。
+- `Top Light Strength`：光色の強さ。0で光色を重ねない。
+- `Top Light Spread`：上端から光色が広がる範囲。大きいほど下まで広がる。
+- `Top Light Falloff`：光色の減衰。大きいほど上端に集中する。
+
+カメラ専用の背景として描画する。通常視点・俯瞰視点でも画面上側に光色が載る。これは背景の色調演出であり、机・カードを照らす光源は既存のDirectional Lightで調整する。
 
 ## ADVイベントSOの追加
 
@@ -124,7 +139,7 @@ Casinoのモデルは `Assets/Casino/LWRP/Prefabs/PlayingCards` にある。カ�
 |---|---|
 | RoundStarted | ラウンド開始。まだ支払い前 |
 | InitialBetPaid | 双方の初期BET確定 |
-| CardsDealt | 配布内容が確定。UI手札は全て裏向き |
+| CardsDealt | 配布内容が確定。プレイヤーのUI手札は表向き、ディーラーは裏向き |
 | BeforeCardSelection | プレイヤーの選択を受け付ける前 |
 | CardSelected | 選択確定。手札から除外、まだ公開点数に加算しない |
 | BeforeCardReveal | 表に返す前。公開点数への加算前 |
@@ -172,6 +187,6 @@ PlayerHand/DealerHandは表示を行う信頼されたコード用の読み取�
 
 テスト内容：300シードでの勝利・敗北・Push、A=14、カード選択順、重複なし、ディーラー先手、両者Fold、不均等ポット、各支払いの資金不足と再開、二重操作と古い演出ID拒否、次ラウンドの初期化、AI確率調整。
 
-`Tests/HighCardDuel/UnityIntegrationTests.cs`は一時Unity検証プロジェクト用。既存手札プレハブとのドラッグ接続、全手札裏向き、コルーチン完了待ち、演出例外と再試行、Controller無効化と再開、資金補充、精算を確認する。
+`Tests/HighCardDuel/UnityIntegrationTests.cs`は一時Unity検証プロジェクト用。既存手札プレハブとのドラッグ接続、プレイヤー手札の表向き表示・ディーラー手札の裏向き表示、コルーチン完了待ち、演出例外と再試行、Controller無効化と再開、資金補充、精算を確認する。
 
 `PresentationIntegrationTests.cs`は同じ隔離環境で使用する演出テスト。実際のCasinoモデルとCinemachineを使い、ADVのテストダブルで完了待ち・中断復帰・ラウンドごとの実行回数を確認する。実際の宴の台詞・音声・シナリオ内容は、使用するラベルを設定して本プロジェクトで確認する。

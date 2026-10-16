@@ -20,10 +20,9 @@ namespace Casino.HighCardDuel
         private readonly HashSet<DuelPresentationEvent> playedThisRound = new HashSet<DuelPresentationEvent>();
         private readonly HashSet<string> completedEvents = new HashSet<string>();
         private readonly HashSet<long> completedVisuals = new HashSet<long>();
-        private readonly Dictionary<string, AdvRun> advRuns = new Dictionary<string, AdvRun>();
+        private Casino.Common.AdvScenarioPlayback playback;
         private long roundCueId = -1;
         private HighCardDuelGame currentGame;
-        private sealed class AdvRun { public bool Finished; public bool Failed; }
 
         /// <summary>ゲームの演出要求を購読する。</summary>
         private void OnEnable()
@@ -46,7 +45,7 @@ namespace Casino.HighCardDuel
             {
                 currentGame = controller.Game;
                 roundCueId = cue.Id;
-                playedThisRound.Clear(); completedEvents.Clear(); completedVisuals.Clear(); advRuns.Clear();
+                playedThisRound.Clear(); completedEvents.Clear(); completedVisuals.Clear(); playback?.Clear();
             }
             yield return PlayEvents(cue, DuelEventStage.BeforeVisual);
             if (!completedVisuals.Contains(cue.Id))
@@ -84,34 +83,8 @@ namespace Casino.HighCardDuel
         /// <param name="key">演出内で再生を識別するキー。</param>
         private IEnumerator PlayScenario(string label, string key)
         {
-            // 宴は追加シーンで遅れて起動するため、初めて必要になった時だけ取得して保持する。
-            float deadline = Time.realtimeSinceStartup + 15f;
-            while (adv == null)
-            {
-                adv = AdvEngineController.Instance;
-                if (adv != null) break;
-                if (Time.realtimeSinceStartup > deadline) throw new InvalidOperationException("宴が起動していません。");
-                yield return null;
-            }
-            if (!advRuns.TryGetValue(key, out AdvRun run) || run.Failed)
-            {
-                while (adv.IsPlaying) yield return null;
-                run = new AdvRun();
-                advRuns[key] = run;
-                adv.JumpScenario(label, () => run.Finished = true, () => run.Failed = true);
-            }
-            while (!run.Finished && !run.Failed)
-            {
-                if (adv == null || !adv.isActiveAndEnabled || !adv.IsPlaying)
-                {
-                    run.Failed = true;
-                    throw new InvalidOperationException("宴の再生が正常終了せず中断されました。");
-                }
-                yield return null;
-            }
-            if (run.Failed) throw new InvalidOperationException($"宴のシナリオを開始できません: {label}");
-            // ADVを閉じたクリックが手札・BETの入力へ流れないよう、入力遮断解除も待つ。
-            while (adv != null && adv.UiModal != null && adv.UiModal.IsBlocking) yield return null;
+            if (playback == null) playback = new Casino.Common.AdvScenarioPlayback(adv);
+            yield return playback.Play(label, key);
         }
 
         /// <summary>カード配置、Flip、視点移動、比較表示を実行する。</summary>

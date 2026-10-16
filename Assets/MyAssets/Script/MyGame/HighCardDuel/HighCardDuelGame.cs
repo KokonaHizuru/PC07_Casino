@@ -98,7 +98,7 @@ namespace Casino.HighCardDuel
             Present(DuelTiming.BeforeCardSelection, () => ChangeState(DuelState.SelectingCard), DuelActor.Player);
         }
 
-        /// <summary>プレイヤーが裏向きの手札から選んだカードを受け付ける。</summary>
+        /// <summary>プレイヤーが自分の手札から選んだカードを受け付ける。</summary>
         /// <param name="card">ドラッグで選択した手札内のカード。</param>
         public bool SelectCard(PlayingCard card)
         {
