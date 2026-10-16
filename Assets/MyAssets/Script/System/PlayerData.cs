@@ -9,6 +9,8 @@ using UnityEngine.TextCore.Text;
 [Serializable]
 public class PlayerData
 {
+	// カジノの所持金。初期資金はゲーム開始側で設定する。
+	public long casinoMoney;
 	// フラグ
 	public FlagData flag = new();
 
@@ -20,6 +22,7 @@ public class PlayerData
 	/// </summary>
 	public void  Reset()
 	{
+		casinoMoney = 0;
 		flag.Clear();
 		sexStatus.Reset();
 

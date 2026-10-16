@@ -60,4 +60,8 @@ InspectorのPlay Areaへ直接割り当ててもよい。実行中に参照先�
 
 持ち上げ量・ホバー時間・戻り時間はCardUIプレハブのCardView、間隔は手札のSpacing、位置やサイズは各RectTransformで調整できる。手札枚数が増えると手札領域の幅に合わせて間隔を詰める。
 
+`CardTableUI > PlayerHand`のRectTransformのPos Yを小さくすると手札全体が下がる（初期値180、例えば140）。再生停止中に変更するとシーンへ保存できる。
+
+CardHandUIの`Curve Depth`は両端を下げる量、`Fan Angle`は両端の傾き、`Spacing`はカードの中心間隔。0の曲率・角度なら従来の横一列表示。Scene_HightAndLowのPlayerHandはCurve Depth=18、Fan Angle=8、Spacing=140の軽い扇状配置にしている。1枚なら中央で直立し、ドラッグ中も直立する。範囲外ドロップでは元の位置と角度へ戻る。
+
 今回専用の `Assets/MyAssets/Script/MyGame/Debug/CardHandDebug.cs` はシーンの独立オブジェクトにだけ付いている。本番の配布処理へ切り替える際は、このオブジェクトを外す。

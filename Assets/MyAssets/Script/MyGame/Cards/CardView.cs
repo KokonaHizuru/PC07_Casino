@@ -21,6 +21,7 @@ namespace Casino.Cards
         private RectTransform homeParent;
         private Image hitArea;
         private Vector2 homePosition;
+        private Quaternion homeRotation = Quaternion.identity;
         private int homeIndex;
         private int dragPointer;
         private bool dragging;
@@ -65,13 +66,16 @@ namespace Casino.Cards
         /// <summary>手札内での通常位置と描画順を設定する。</summary>
         /// <param name="position">通常の表示位置。</param>
         /// <param name="index">通常の描画順。</param>
-        internal void SetHome(Vector2 position, int index)
+        /// <param name="angle">手札内でのZ軸の傾き。</param>
+        internal void SetHome(Vector2 position, int index, float angle = 0f)
         {
             homePosition = position;
+            homeRotation = Quaternion.Euler(0f, 0f, angle);
             homeIndex = index;
             if (dragging) return;
             if (returning) { ReturnHome(); return; }
             rect.anchoredPosition = position;
+            rect.localRotation = homeRotation;
             rect.SetSiblingIndex(index);
         }
 
@@ -118,6 +122,7 @@ namespace Casino.Cards
             visual.anchoredPosition = Vector2.zero;
             hitArea.raycastTarget = false;
             rect.SetParent(owner.DragLayer, true);
+            rect.localRotation = Quaternion.identity;
             rect.SetAsLastSibling();
             FollowPointer(eventData);
         }
@@ -158,8 +163,13 @@ namespace Casino.Cards
             rect.SetAsLastSibling();
             returning = true;
             hitArea.raycastTarget = false;
-            returnTween = DOTween.To(() => rect.anchoredPosition, value => rect.anchoredPosition = value,
-                homePosition, returnDuration).SetEase(Ease.OutCubic).SetUpdate(true).OnComplete(FinishReturn);
+            Vector2 startPosition = rect.anchoredPosition;
+            Quaternion startRotation = rect.localRotation;
+            returnTween = DOTween.To(() => 0f, value =>
+            {
+                rect.anchoredPosition = Vector2.LerpUnclamped(startPosition, homePosition, value);
+                rect.localRotation = Quaternion.SlerpUnclamped(startRotation, homeRotation, value);
+            }, 1f, returnDuration).SetEase(Ease.OutCubic).SetUpdate(true).OnComplete(FinishReturn);
         }
 
         /// <summary>復帰完了後に描画順と当たり判定を戻す。</summary>
@@ -183,6 +193,7 @@ namespace Casino.Cards
             {
                 if (rect.parent != homeParent) rect.SetParent(homeParent, true);
                 rect.anchoredPosition = homePosition;
+                rect.localRotation = homeRotation;
                 rect.SetSiblingIndex(homeIndex);
             }
             if (visual != null) visual.anchoredPosition = Vector2.zero;

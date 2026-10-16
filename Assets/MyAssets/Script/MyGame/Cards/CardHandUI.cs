@@ -14,6 +14,10 @@ namespace Casino.Cards
         [SerializeField] private RectTransform playArea;
         [SerializeField] private bool interactable = true;
         [SerializeField, Min(1f)] private float spacing = 200f;
+        [Tooltip("両端のカードを下げる量。0なら水平に並べる。")]
+        [SerializeField, Min(0f)] private float curveDepth;
+        [Tooltip("両端のカードの傾き。中央は直立し、左右へ扇状に開く。")]
+        [SerializeField, Range(0f, 30f)] private float fanAngle;
 
         private readonly List<CardView> cards = new List<CardView>();
         private RectTransform rect;
@@ -144,15 +148,24 @@ namespace Casino.Cards
             return true;
         }
 
-        /// <summary>手札領域の幅に合わせてカードを中央揃えする。</summary>
+        /// <summary>手札領域の幅に合わせてカードを中央揃えし、扇状に配置する。</summary>
         private void LayoutCards()
         {
             if (rect == null || cards.Count == 0) return;
-            float width = cards[0].Rect.sizeDelta.x;
+            Vector2 size = cards[0].Rect.sizeDelta;
+            float radians = fanAngle * Mathf.Deg2Rad;
+            float width = Mathf.Max(size.x, size.x * Mathf.Cos(radians) + size.y * Mathf.Sin(radians));
             float step = cards.Count > 1 ? Mathf.Min(spacing, Mathf.Max(0f, rect.rect.width - width) / (cards.Count - 1)) : 0f;
+            float middle = (cards.Count - 1) * 0.5f;
             for (int i = 0; i < cards.Count; i++)
-                cards[i].SetHome(new Vector2((i - (cards.Count - 1) * 0.5f) * step, 0f), i);
+            {
+                float offset = middle > 0f ? (i - middle) / middle : 0f;
+                cards[i].SetHome(new Vector2((i - middle) * step, -curveDepth * offset * offset), i, -fanAngle * offset);
+            }
         }
+
+        /// <summary>Inspectorで変更した曲率と間隔を再生中の手札へ反映する。</summary>
+        private void OnValidate() => LayoutCards();
 
         /// <summary>解像度やUIサイズ変更時に並びを更新する。</summary>
         private void OnRectTransformDimensionsChange() => LayoutCards();
