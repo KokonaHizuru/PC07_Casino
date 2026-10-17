@@ -75,13 +75,19 @@ namespace Casino.ThreeCardPoker
                     tableCards.Clear(); SetText("");
                     yield return cameras.SwitchTo(CardCameraView.Normal); break;
                 case PokerTiming.CardDealt:
-                    SetText("");
-                    yield return cameras.SwitchTo(CardCameraView.Table);
-                    yield return tableCards.Place(cue.Card.Value, cue.Actor == PokerActor.Player, cue.CardIndex, cue.FaceUp);
-                    break;
+                case PokerTiming.BeforePlayerExchange:
                 case PokerTiming.BeforePlayerDecision:
+                case PokerTiming.BeforeExchange:
+                case PokerTiming.CardExchanged:
                     SetText(""); yield return cameras.SwitchTo(CardCameraView.Normal); break;
                 case PokerTiming.BeforeShowdown:
+                    yield return cameras.SwitchTo(CardCameraView.Table);
+                    for (int i = 0; i < controller.Game.PlayerCards.Count; i++)
+                    {
+                        yield return tableCards.Place(controller.Game.PlayerCards[i], true, i, true);
+                        yield return tableCards.Place(controller.Game.DealerCards[i], false, i, false);
+                    }
+                    break;
                 case PokerTiming.BeforeCardReveal:
                     yield return cameras.SwitchTo(CardCameraView.Table); break;
                 case PokerTiming.CardRevealed:
@@ -90,7 +96,7 @@ namespace Casino.ThreeCardPoker
                     SetText(cue.DealerQualified == true ? "DEALER QUALIFIES" : "DEALER DOES NOT QUALIFY");
                     yield return new WaitForSecondsRealtime(resultSeconds); break;
                 case PokerTiming.ResultDecided:
-                    yield return cameras.SwitchTo(CardCameraView.Table);
+                    yield return cameras.SwitchTo(cue.Result == PokerResult.PlayerFold ? CardCameraView.Normal : CardCameraView.Table);
                     string opponent = controller.Game.DealerCardsRevealed ? controller.Game.DealerScore.ToString() : "???";
                     string result = cue.Result == PokerResult.PlayerWin ? "YOU WIN" : cue.Result == PokerResult.DealerWin ? "DEALER WINS"
                         : cue.Result == PokerResult.PlayerFold ? "FOLD - ANTE LOST" : cue.Result == PokerResult.DealerNotQualified

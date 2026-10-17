@@ -90,9 +90,9 @@ public sealed class BlackjackTestRunner : MonoBehaviour
         var playerRect = (RectTransform)player.transform; var dealerRect = (RectTransform)dealer.transform;
         Vector2 playerHome = playerRect.anchoredPosition, dealerHome = dealerRect.anchoredPosition;
         var brain = Camera.main.GetComponent<CinemachineBrain>();
-        var hit = GameObject.Find("Hit").GetComponent<Button>();
-        var stand = GameObject.Find("Stand").GetComponent<Button>();
-        var doubleDown = GameObject.Find("Double Down").GetComponent<Button>();
+        var hit = (Button)typeof(BlackjackSceneUI).GetField("hit", BindingFlags.Instance | BindingFlags.NonPublic).GetValue(ui);
+        var stand = (Button)typeof(BlackjackSceneUI).GetField("stand", BindingFlags.Instance | BindingFlags.NonPublic).GetValue(ui);
+        var doubleDown = (Button)typeof(BlackjackSceneUI).GetField("doubleDown", BindingFlags.Instance | BindingFlags.NonPublic).GetValue(ui);
         Check(FindFirstObjectByType<Casino.HighCardDuel.HighCardDuelController>() == null, "Old controller remains");
         Check(GameObject.Find("DealerAnchor").transform.childCount == 0, "Dealer placeholder changed");
         Check(Camera.main.GetComponent<Skybox>()?.material != null, "Background lost");

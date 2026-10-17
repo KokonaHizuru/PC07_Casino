@@ -5,7 +5,7 @@ namespace Casino.ThreeCardPoker
 {
     public enum PokerEventStage { BeforeVisual, AfterVisual }
     public enum PokerQualificationFilter { Any, Qualified, NotQualified }
-    public enum PokerActionFilter { Any, Play, Fold }
+    public enum PokerActionFilter { Any, Play, Fold, Exchange, KeepHand }
 
     /// <summary>スリーカードポーカーのタイミングに会話と視点を対応付ける。</summary>
     [CreateAssetMenu(menuName = "Casino/Poker/Presentation Event")]

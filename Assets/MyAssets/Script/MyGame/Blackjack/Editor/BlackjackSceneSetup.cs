@@ -36,7 +36,8 @@ namespace Casino.Blackjack.Editor
             var cards = Undo.AddComponent<TableCardPresenter>(oldCards.gameObject);
             Copy(old, controller, "playerHand", "dealerHand");
             Copy(oldRig, rig, "brain", "normalCamera", "tableCamera", "playerHand", "dealerHand", "handSlideDuration", "hiddenPadding", "transitionTimeout");
-            Copy(oldCards, cards, "catalog", "playerOrigin", "dealerOrigin", "playerSlots", "dealerSlots", "modelScale", "moveDuration", "flipDuration", "liftHeight");
+            Copy(oldCards, cards, "catalog", "playerOrigin", "dealerOrigin", "playerSlots", "dealerSlots", "modelScale", "moveDuration", "flipDuration", "liftHeight",
+                "deckAnchor", "discardAnchor", "transferDuration", "transferArc", "discardThickness");
             var cardSettings = new SerializedObject(cards);
             cardSettings.FindProperty("spreadToFit").boolValue = true;
             cardSettings.ApplyModifiedProperties();
@@ -66,7 +67,7 @@ namespace Casino.Blackjack.Editor
                 rect.anchoredPosition = new Vector2((i - 2.5f) * 215, rect.anchoredPosition.y);
             }
             var fold = (Button)oldFields.FindProperty("fold").objectReferenceValue;
-            Undo.RecordObject(fold.gameObject, "Hide Fold"); fold.gameObject.SetActive(false);
+            Undo.DestroyObjectImmediate(fold.gameObject);
             string folder = "Assets/MyAssets/Blackjack";
             Directory.CreateDirectory(folder); AssetDatabase.Refresh();
             var events = new[] {

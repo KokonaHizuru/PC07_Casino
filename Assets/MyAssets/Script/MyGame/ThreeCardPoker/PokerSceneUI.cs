@@ -1,3 +1,4 @@
+using Casino.Common;
 using System;
 using System.Collections;
 using UnityEngine;
@@ -19,14 +20,27 @@ namespace Casino.ThreeCardPoker
         [SerializeField] private Button nextRound;
         [SerializeField] private Button funding;
         [SerializeField] private Button retry;
+        [SerializeField] private Button keepHand;
+        [SerializeField] private RectTransform exchangeArea;
+        [SerializeField] private Vector2 exchangeAreaOffset = Vector2.zero;
+        [SerializeField] private Vector2 exchangeAreaSize = new Vector2(900, 300);
+        [SerializeField] private CardGameChoiceLayout choiceLayout = new CardGameChoiceLayout();
         private PlayerData data;
         private bool presentationFailed;
 
         /// <summary>ボタンと状態通知を一度接続する。</summary>
         private void Awake()
         {
+            choiceLayout.Initialize(nextRound, play, fold, keepHand, funding, retry);
+            if (exchangeArea != null)
+            {
+                exchangeArea.anchoredPosition = exchangeAreaOffset;
+                exchangeArea.sizeDelta = exchangeAreaSize;
+                exchangeArea.gameObject.SetActive(false);
+            }
             play.onClick.AddListener(Play); fold.onClick.AddListener(Fold);
             nextRound.onClick.AddListener(NextRound); funding.onClick.AddListener(ResumeFunding); retry.onClick.AddListener(Retry);
+            if (keepHand != null) keepHand.onClick.AddListener(KeepHand);
             controller.StateChanged += Refresh; controller.PresentationFailed += Failed;
         }
         /// <summary>確認用または本番のデータで開始する。</summary>
@@ -46,6 +60,8 @@ namespace Casino.ThreeCardPoker
         private void Play() => controller.Act(PokerAction.Play);
         /// <summary>Foldを要求する。</summary>
         private void Fold() => controller.Act(PokerAction.Fold);
+        /// <summary>交換せずに現在の手札でPlay／Foldへ進む。</summary>
+        private void KeepHand() => controller.SkipExchange();
         /// <summary>次のラウンドを開始し、不正なBET設定は表示する。</summary>
         private void NextRound()
         {
@@ -75,13 +91,19 @@ namespace Casino.ThreeCardPoker
         private void Refresh(PokerState state)
         {
             var game = controller.Game; if (game == null) return;
-            play.interactable = game.CanAct(PokerAction.Play); fold.interactable = game.CanAct(PokerAction.Fold);
-            nextRound.interactable = state == PokerState.Completed;
-            nextRound.gameObject.SetActive(state == PokerState.Completed);
-            funding.gameObject.SetActive(state == PokerState.WaitingForFunds); retry.gameObject.SetActive(presentationFailed);
+            CardGameChoiceLayout.SetVisible(play, !presentationFailed && game.CanAct(PokerAction.Play));
+            CardGameChoiceLayout.SetVisible(fold, !presentationFailed && game.CanAct(PokerAction.Fold));
+            bool exchanging = !presentationFailed && state == PokerState.ChoosingExchange;
+            CardGameChoiceLayout.SetVisible(keepHand, exchanging);
+            if (exchangeArea != null) exchangeArea.gameObject.SetActive(exchanging);
+            CardGameChoiceLayout.SetVisible(nextRound, !presentationFailed && state == PokerState.Completed);
+            CardGameChoiceLayout.SetVisible(funding, !presentationFailed && state == PokerState.WaitingForFunds);
+            CardGameChoiceLayout.SetVisible(retry, presentationFailed);
+            choiceLayout.Refresh(exchanging);
             string opponent = game.DealerCardsRevealed ? game.DealerScore.ToString() : "???";
             string player = game.PlayerCards.Count == 3 ? game.PlayerScore.ToString() : "-";
-            string prompt = presentationFailed ? "Presentation stopped - Retry" : state == PokerState.ChoosingAction ? "Play / Fold"
+            string prompt = presentationFailed ? "Presentation stopped - Retry"
+                : exchanging ? "Drag one card to exchange / Keep Hand" : state == PokerState.ChoosingAction ? "Play / Fold"
                 : state == PokerState.WaitingForFunds ? $"Required {game.RequiredFunds} / Shortage {game.Shortage}"
                 : state == PokerState.Completed ? "Round complete" : "";
             status.text = $"{(previewMode ? "PREVIEW  " : "")}Money {game.Balance}   Ante {game.Ante} / Play {game.PlayBet}   PLAYER {player} / DEALER {opponent}\n{prompt}";

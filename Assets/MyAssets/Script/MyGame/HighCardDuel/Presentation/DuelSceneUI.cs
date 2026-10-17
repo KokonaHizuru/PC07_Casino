@@ -1,3 +1,4 @@
+using Casino.Common;
 using System;
 using System.Collections;
 using UnityEngine;
@@ -21,12 +22,14 @@ namespace Casino.HighCardDuel
         [SerializeField] private Button nextRound;
         [SerializeField] private Button funding;
         [SerializeField] private Button retry;
+        [SerializeField] private CardGameChoiceLayout choiceLayout = new CardGameChoiceLayout();
         private PlayerData data;
         private bool presentationFailed;
 
         /// <summary>各ボタンとゲーム通知を一度接続する。</summary>
         private void Awake()
         {
+            choiceLayout.Initialize(nextRound, check, raise, call, fold, funding, retry);
             check.onClick.AddListener(Check);
             raise.onClick.AddListener(Raise);
             call.onClick.AddListener(Call);
@@ -93,13 +96,14 @@ namespace Casino.HighCardDuel
         {
             HighCardDuelGame game = controller.Game;
             if (game == null) return;
-            check.interactable = game.CanAct(DuelAction.Check);
-            raise.interactable = game.CanAct(DuelAction.Raise);
-            call.interactable = game.CanAct(DuelAction.Call);
-            fold.interactable = game.CanAct(DuelAction.Fold);
-            nextRound.interactable = state == DuelState.Completed;
-            funding.gameObject.SetActive(state == DuelState.WaitingForFunds);
-            retry.gameObject.SetActive(presentationFailed);
+            CardGameChoiceLayout.SetVisible(check, !presentationFailed && game.CanAct(DuelAction.Check));
+            CardGameChoiceLayout.SetVisible(raise, !presentationFailed && game.CanAct(DuelAction.Raise));
+            CardGameChoiceLayout.SetVisible(call, !presentationFailed && game.CanAct(DuelAction.Call));
+            CardGameChoiceLayout.SetVisible(fold, !presentationFailed && game.CanAct(DuelAction.Fold));
+            CardGameChoiceLayout.SetVisible(nextRound, !presentationFailed && state == DuelState.Completed);
+            CardGameChoiceLayout.SetVisible(funding, !presentationFailed && state == DuelState.WaitingForFunds);
+            CardGameChoiceLayout.SetVisible(retry, presentationFailed);
+            choiceLayout.Refresh(state == DuelState.SelectingCard);
             string prompt = presentationFailed ? "Presentation stopped - check Console / Retry"
                 : state == DuelState.SelectingCard ? "Drag a card to the table"
                 : state == DuelState.ChoosingBet ? "Choose your bet"

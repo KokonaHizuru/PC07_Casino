@@ -13,6 +13,7 @@ namespace Casino.ThreeCardPoker
         private readonly PokerDealer dealer = new PokerDealer();
         private readonly List<PlayingCard> playerCards = new List<PlayingCard>();
         private readonly List<PlayingCard> dealerCards = new List<PlayingCard>();
+        private readonly List<PlayingCard> discardedCards = new List<PlayingCard>();
         private Action continuation;
         private Action retryPayment;
         private long nextCueId;
@@ -21,6 +22,9 @@ namespace Casino.ThreeCardPoker
         public PokerCue PendingCue { get; private set; }
         public IReadOnlyList<PlayingCard> PlayerCards { get; }
         public IReadOnlyList<PlayingCard> DealerCards { get; }
+        public IReadOnlyList<PlayingCard> DiscardedCards { get; }
+        public bool DealerExchangeCompleted { get; private set; }
+        public bool PlayerExchangeCompleted { get; private set; }
         public PokerHandValue PlayerScore => PokerHandEvaluator.Evaluate(PlayerCards);
         public PokerHandValue DealerScore => PokerHandEvaluator.Evaluate(DealerCards);
         public int DealerRevealedCount { get; private set; }
@@ -44,6 +48,7 @@ namespace Casino.ThreeCardPoker
         {
             this.wallet = wallet ?? throw new ArgumentNullException(nameof(wallet)); deck = new CardDeck(seed);
             PlayerCards = playerCards.AsReadOnly(); DealerCards = dealerCards.AsReadOnly();
+            DiscardedCards = discardedCards.AsReadOnly();
         }
         /// <summary>正の整数のAnteでラウンドを開始する。</summary>
         /// <param name="ante">Ante。</param>
@@ -52,7 +57,8 @@ namespace Casino.ThreeCardPoker
             if ((State != PokerState.Idle && State != PokerState.Completed) || ante <= 0) return false;
             InitialAnte = ante; Ante = 0; PlayBet = 0; Payout = 0; RequiredFunds = 0;
             DealerRevealedCount = 0; DealerQualified = null; Result = PokerResult.None; retryPayment = null;
-            playerCards.Clear(); dealerCards.Clear(); deck.Reset(); deck.Shuffle();
+            DealerExchangeCompleted = false; PlayerExchangeCompleted = false;
+            playerCards.Clear(); dealerCards.Clear(); discardedCards.Clear(); deck.Reset(); deck.Shuffle();
             Present(PokerTiming.RoundStarted, () => Pay(ante, () =>
             {
                 Ante = ante; Present(PokerTiming.AntePaid, () => Deal(0), PokerActor.Player, amount: ante);
@@ -65,12 +71,57 @@ namespace Casino.ThreeCardPoker
         {
             if (step == 6)
             {
-                Present(PokerTiming.CardsDealt, () => Present(PokerTiming.BeforePlayerDecision,
-                    () => ChangeState(PokerState.ChoosingAction), PokerActor.Player)); return;
+                Present(PokerTiming.CardsDealt, () => Present(PokerTiming.BeforeDealerExchange,
+                    () => Exchange(false, dealer.ChooseExchange(DealerCards)), PokerActor.Dealer)); return;
             }
             if (!deck.TryDraw(out PlayingCard card)) throw new InvalidOperationException("山札が不足しました。");
             bool player = step % 2 == 0; var hand = player ? playerCards : dealerCards; hand.Add(card);
             Present(PokerTiming.CardDealt, () => Deal(step + 1), player ? PokerActor.Player : PokerActor.Dealer, card, hand.Count - 1, player);
+        }
+        /// <summary>プレイヤーが選んだ手札1枚を、無料で一度だけ交換する。</summary>
+        /// <param name="card">交換する現在の手札。</param>
+        public bool ExchangeCard(PlayingCard card)
+        {
+            if (State != PokerState.ChoosingExchange || PlayerExchangeCompleted) return false;
+            int index = playerCards.IndexOf(card); if (index < 0) return false;
+            Exchange(true, index); return true;
+        }
+        /// <summary>プレイヤーの交換を見送り、Play／Foldへ進む。</summary>
+        public bool SkipExchange()
+        {
+            if (State != PokerState.ChoosingExchange || PlayerExchangeCompleted) return false;
+            Exchange(true, -1); return true;
+        }
+        /// <summary>交換前の演出を待ってから残り山札を引き、捨て札は山札へ戻さず保持する。</summary>
+        /// <param name="player">プレイヤーの交換か。</param>
+        /// <param name="index">交換位置。-1で見送る。</param>
+        private void Exchange(bool player, int index)
+        {
+            PokerActor actor = player ? PokerActor.Player : PokerActor.Dealer;
+            if (index < 0)
+            {
+                Present(PokerTiming.ExchangeSkipped, () => FinishExchange(player, PokerAction.KeepHand), actor, action: PokerAction.KeepHand); return;
+            }
+            var hand = player ? playerCards : dealerCards; PlayingCard previous = hand[index];
+            Present(PokerTiming.BeforeExchange, () =>
+            {
+                if (!deck.TryDraw(out PlayingCard replacement)) throw new InvalidOperationException("交換用の山札が不足しました。");
+                discardedCards.Add(previous); hand[index] = replacement;
+                Present(PokerTiming.CardExchanged, () => FinishExchange(player, PokerAction.Exchange), actor,
+                    replacement, index, player, PokerAction.Exchange, previousCard: previous);
+            }, actor, previous, index, player, PokerAction.Exchange);
+        }
+        /// <summary>交換または見送りの完了を通知し、次の人またはPlay／Foldへ進む。</summary>
+        /// <param name="player">プレイヤーの完了か。</param>
+        /// <param name="action">交換または見送り。</param>
+        private void FinishExchange(bool player, PokerAction action)
+        {
+            if (player) PlayerExchangeCompleted = true; else DealerExchangeCompleted = true;
+            Present(PokerTiming.ExchangeFinished, () =>
+            {
+                if (player) Present(PokerTiming.BeforePlayerDecision, () => ChangeState(PokerState.ChoosingAction), PokerActor.Player);
+                else Present(PokerTiming.BeforePlayerExchange, () => ChangeState(PokerState.ChoosingExchange), PokerActor.Player);
+            }, player ? PokerActor.Player : PokerActor.Dealer, action: action);
         }
         /// <summary>現在選択できる行動か確認する。</summary>
         /// <param name="action">選択行動。</param>
@@ -153,11 +204,12 @@ namespace Casino.ThreeCardPoker
         /// <param name="faceUp">表向きか。</param>
         /// <param name="action">行動。</param>
         /// <param name="amount">金額。</param>
+        /// <param name="previousCard">交換前のカード。</param>
         private void Present(PokerTiming timing, Action next, PokerActor actor = PokerActor.None,
-            PlayingCard? card = null, int index = -1, bool faceUp = true, PokerAction? action = null, long amount = 0)
+            PlayingCard? card = null, int index = -1, bool faceUp = true, PokerAction? action = null, long amount = 0, PlayingCard? previousCard = null)
         {
             continuation = next;
-            var cue = new PokerCue(++nextCueId, timing, this, actor, card, index, faceUp, action, amount);
+            var cue = new PokerCue(++nextCueId, timing, this, actor, card, index, faceUp, action, amount, previousCard);
             PendingCue = cue; ChangeState(PokerState.Presenting); if (PendingCue == cue) CueRaised?.Invoke(cue);
         }
         /// <summary>最新IDだけを完了し、二重通知や古い通知で進行しないようにする。</summary>

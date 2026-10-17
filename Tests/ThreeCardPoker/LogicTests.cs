@@ -38,6 +38,7 @@ public static class PokerLogicTests
         while (game.PendingCue != null && --limit > 0)
         {
             var cue = game.PendingCue;
+            Check(!game.SkipExchange() && !game.ExchangeCard(default), "Exchange during presentation");
             Check(!game.Act(PokerAction.Play) && !game.Act(PokerAction.Fold) && !game.StartRound(5), "Input during presentation");
             Check(!game.CompletePresentation(cue.Id - 1), "Stale completion");
             Check(game.CompletePresentation(cue.Id), "Completion rejected");
@@ -75,6 +76,11 @@ public static class PokerLogicTests
         bool rejected = false;
         try { PokerHandEvaluator.Evaluate(new[] { deck[0], deck[0], deck[1] }); } catch (ArgumentException) { rejected = true; }
         Check(rejected, "Duplicate accepted by evaluator");
+        Check(dealer.ChooseExchange(new[] { deck[0], deck[3], deck[8] }) == -1, "Dealer broke flush");
+        Check(dealer.ChooseExchange(new[] { deck[0], deck[13], deck[29] }) == 2, "Dealer broke pair");
+        Check(dealer.ChooseExchange(new[] { deck[0], deck[16], deck[34] }) == 1, "Dealer must keep ace and replace lowest");
+        Check(dealer.ChooseExchange(new[] { deck[0], deck[25], deck[37] }) == -1, "Dealer broke straight");
+        Check(dealer.ChooseExchange(new[] { deck[0], deck[13], deck[26] }) == -1, "Dealer broke trips");
     }
     /// <summary>多数の山札順で全結果、奇数Ante、補充、精算待機を検証する。</summary>
     private static void Rounds()
@@ -83,16 +89,47 @@ public static class PokerLogicTests
         for (int seed = 0; seed < 10000; seed++)
         {
             var wallet = new Wallet(); var game = new PokerGame(wallet, seed); int reveals = 0;
+            var cues = new List<PokerCue>(); game.CueRaised += cues.Add;
             game.CueRaised += cue => { if (cue.Timing == PokerTiming.CardRevealed) reveals++; };
             Check(!game.StartRound(0) && !game.StartRound(-1), "Invalid ante");
             Check(game.StartRound(5), "Odd ante rejected"); Drain(game);
             Check(game.State == PokerState.WaitingForFunds && game.PlayerCards.Count == 0 && game.Shortage == 5, "Initial funds wait");
             wallet.Balance = 4; Check(!game.ResumeAfterFunding() && wallet.Balance == 4, "Partial funds charged");
             wallet.Balance = 5; Check(game.ResumeAfterFunding(), "Resume ante"); Drain(game);
+            Check(game.State == PokerState.ChoosingExchange && game.DealerExchangeCompleted && !game.PlayerExchangeCompleted, "Dealer must exchange first");
+            Check(!game.Act(PokerAction.Play) && !game.Act(PokerAction.Fold), "Bet before exchange decision");
+            Check(!game.ExchangeCard(game.DealerCards[0]), "Foreign card exchange");
+            var shoe = new CardDeck(seed); shoe.Reset(); shoe.Shuffle(); var dealt = new PlayingCard[8];
+            for (int i = 0; i < dealt.Length; i++) shoe.TryDraw(out dealt[i]);
+            var originalDealer = new[] { dealt[1], dealt[3], dealt[5] };
+            int dealerIndex = new PokerDealer().ChooseExchange(originalDealer);
+            int discards = dealerIndex < 0 ? 0 : 1;
+            Check(game.DiscardedCards.Count == discards, "Dealer discard count");
+            for (int i = 0; i < 3; i++) Check(game.DealerCards[i].Equals(i == dealerIndex ? dealt[6] : originalDealer[i]), "Dealer exchange position / draw");
+            Check(cues.FindIndex(c => c.Timing == PokerTiming.ExchangeFinished && c.Actor == PokerActor.Dealer)
+                < cues.FindIndex(c => c.Timing == PokerTiming.BeforePlayerExchange), "Exchange cue order");
+            var previous = game.PlayerCards[seed % 3];
+            if (seed % 2 == 0)
+            {
+                Check(game.ExchangeCard(previous), "Player exchange rejected");
+                Check(game.PendingCue.Timing == PokerTiming.BeforeExchange && game.PlayerCards[seed % 3].Equals(previous), "Mutation before presentation");
+                Drain(game); discards++;
+                Check(game.PlayerCards[seed % 3].Equals(dealt[dealerIndex < 0 ? 6 : 7]), "Player drew wrong card");
+                Check(game.DiscardedCards[discards - 1].Equals(previous), "Missing player discard");
+            }
+            else
+            {
+                Check(game.SkipExchange(), "Keep hand rejected"); Drain(game);
+                for (int i = 0; i < 3; i++) Check(game.PlayerCards[i].Equals(dealt[i * 2]), "Keep changed cards");
+            }
+            Check(game.PlayerExchangeCompleted && game.Balance == 0 && game.Ante == 5 && game.PlayBet == 0, "Exchange charged money");
+            Check(!game.ExchangeCard(game.PlayerCards[0]) && !game.SkipExchange(), "Second exchange accepted");
             Check(game.State == PokerState.ChoosingAction && game.Ante == 5 && game.PlayBet == 0, "Initial choice");
             Check(game.PlayerCards.Count == 3 && game.DealerCards.Count == 3 && game.DealerRevealedCount == 0 && game.DealerQualified == null, "Deal / hidden status");
             Check(!game.Act((PokerAction)99), "Invalid action");
             var unique = new HashSet<PlayingCard>(game.PlayerCards); foreach (var card in game.DealerCards) Check(unique.Add(card), "Duplicate in deck");
+            foreach (var card in game.DiscardedCards) Check(unique.Add(card), "Discard returned to deck");
+            Check(game.DiscardedCards.Count == discards, "Unexpected discards");
             if (seed % 7 == 0)
             {
                 Check(game.Act(PokerAction.Fold), "Fold rejected"); Drain(game);
@@ -118,6 +155,7 @@ public static class PokerLogicTests
             long oldId = game.PendingCue?.Id ?? -1;
             Check(game.StartRound(3), "Second round");
             Check(!game.CompletePresentation(oldId) && game.PlayBet == 0 && !game.DealerQualified.HasValue, "Round reset");
+            Check(!game.DealerExchangeCompleted && !game.PlayerExchangeCompleted && game.DiscardedCards.Count == 0, "Exchange state not reset");
         }
         for (int i = 1; i < results.Length; i++) Check(results[i] > 0, "Missing outcome " + (PokerResult)i);
         Console.WriteLine("Outcomes win/loss/push/not-qualified/fold: " + string.Join(",", results));

@@ -7,7 +7,7 @@ using UnityEngine;
 namespace Casino.Common
 {
     /// <summary>各ゲームで共用する3Dカードの配置・整列・Flip。</summary>
-    public class TableCardPresenter : MonoBehaviour
+    public partial class TableCardPresenter : MonoBehaviour
     {
         [SerializeField] private CardModelCatalog catalog;
         [SerializeField] private Transform playerOrigin;
@@ -27,6 +27,7 @@ namespace Casino.Common
         /// <summary>前ラウンドの場札を片付ける。</summary>
         public void Clear()
         {
+            ClearTransfers();
             foreach (Placement card in cards.Values)
                 if (card.Transform != null) { card.Transform.gameObject.SetActive(false); Destroy(card.Transform.gameObject); }
             cards.Clear();
@@ -37,7 +38,9 @@ namespace Casino.Common
         /// <param name="player">プレイヤー側か。</param>
         /// <param name="index">0から始まる配布順。</param>
         /// <param name="faceUp">配置時から表向きにするか。</param>
-        public IEnumerator Place(PlayingCard card, bool player, int index, bool faceUp = false)
+        /// <param name="animate">移動をアニメーションするか。</param>
+        /// <param name="glide">弧を描かず滑るように移動するか。</param>
+        public IEnumerator Place(PlayingCard card, bool player, int index, bool faceUp = false, bool animate = true, bool glide = false)
         {
             if (index < 0) throw new ArgumentOutOfRangeException(nameof(index));
             Transform anchor = Anchor(player, index);
@@ -57,18 +60,44 @@ namespace Casino.Common
             for (int i = 0; i < row.Count; i++) { starts[i] = row[i].Transform.position; targets[i] = Position(row[i]); }
             Quaternion initialRotation = placement.Transform.rotation;
             Quaternion rotation = anchor.rotation * (faceUp ? Quaternion.identity : Quaternion.Euler(180, 0, 0));
-            float duration = Mathf.Max(.01f, moveDuration);
+            float duration = animate ? Mathf.Max(.01f, moveDuration) : 0;
             for (float elapsed = 0; elapsed < duration; elapsed += Time.unscaledDeltaTime)
             {
                 float t = Mathf.SmoothStep(0, 1, elapsed / duration);
                 for (int i = 0; i < row.Count; i++)
                     row[i].Transform.position = Vector3.Lerp(starts[i], targets[i], t)
-                        + (row[i] == placement ? Vector3.up * Mathf.Sin(t * Mathf.PI) * liftHeight : Vector3.zero);
+                        + (row[i] == placement && !glide ? Vector3.up * Mathf.Sin(t * Mathf.PI) * liftHeight : Vector3.zero);
                 placement.Transform.rotation = Quaternion.Slerp(initialRotation, rotation, t);
                 yield return null;
             }
             for (int i = 0; i < row.Count; i++) row[i].Transform.position = targets[i];
             placement.Transform.rotation = rotation;
+        }
+
+        /// <summary>古い札を横へ退避し、同じ位置へ新しい札を配る。再試行でも二重生成しない。</summary>
+        /// <param name="previous">交換前の札。</param>
+        /// <param name="replacement">交換後の札。</param>
+        /// <param name="player">プレイヤー側か。</param>
+        /// <param name="index">配布位置。</param>
+        /// <param name="faceUp">新しい札を表向きにするか。</param>
+        public IEnumerator Replace(PlayingCard previous, PlayingCard replacement, bool player, int index, bool faceUp)
+        {
+            if (previous.Equals(replacement)) throw new ArgumentException("交換前後は異なるカードを指定してください。");
+            if (cards.TryGetValue(previous, out Placement old))
+            {
+                if (old.Player != player || old.Index != index) throw new InvalidOperationException("交換位置が一致しません。");
+                Transform anchor = Anchor(player, index);
+                Vector3 start = old.Transform.position;
+                Vector3 target = anchor.position - anchor.right * .55f + Vector3.up * liftHeight;
+                float duration = Mathf.Max(.01f, moveDuration);
+                for (float elapsed = 0; elapsed < duration; elapsed += Time.unscaledDeltaTime)
+                {
+                    old.Transform.position = Vector3.Lerp(start, target, Mathf.SmoothStep(0, 1, elapsed / duration));
+                    yield return null;
+                }
+                old.Transform.gameObject.SetActive(false); Destroy(old.Transform.gameObject); cards.Remove(previous);
+            }
+            yield return Place(replacement, player, index, faceUp);
         }
 
         /// <summary>配置済みのカードを持ち上げながら表へ返す。</summary>

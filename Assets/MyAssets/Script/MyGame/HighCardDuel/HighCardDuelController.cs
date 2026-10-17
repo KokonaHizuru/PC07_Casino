@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Casino.Cards;
+using Casino.Common;
 using UnityEngine;
 
 namespace Casino.HighCardDuel
@@ -13,6 +14,7 @@ namespace Casino.HighCardDuel
         [SerializeField] private CardHandUI dealerHand;
         [SerializeField] private RectTransform playArea;
         [SerializeField] private HighCardDealerSettings dealerSettings = new HighCardDealerSettings();
+        [SerializeField] private TableCardPresenter handTransfers;
         private bool presentationRunning;
         private long appliedCueId;
         public HighCardDuelGame Game { get; private set; }
@@ -25,6 +27,7 @@ namespace Casino.HighCardDuel
         /// <summary>初期化まで手札操作を止め、ドラッグ通知を購読する。</summary>
         private void Awake()
         {
+            if (handTransfers == null) handTransfers = GetComponentInChildren<TableCardPresenter>();
             if (playerHand != null)
             {
                 playerHand.SetInteractable(false);
@@ -120,7 +123,7 @@ namespace Casino.HighCardDuel
         {
             if (appliedCueId != cue.Id)
             {
-                ApplyHandState(cue);
+                yield return ApplyHandState(cue);
                 appliedCueId = cue.Id;
             }
             TimingReached?.Invoke(cue);
@@ -135,7 +138,7 @@ namespace Casino.HighCardDuel
 
         /// <summary>配布・選択通知に応じて手札UIを同期する。</summary>
         /// <param name="cue">演出情報。</param>
-        private void ApplyHandState(DuelCue cue)
+        private IEnumerator ApplyHandState(DuelCue cue)
         {
             if (cue.Timing == DuelTiming.RoundStarted)
             {
@@ -143,8 +146,19 @@ namespace Casino.HighCardDuel
             }
             else if (cue.Timing == DuelTiming.CardsDealt)
             {
-                if (playerHand != null) foreach (PlayingCard card in Game.PlayerHand) playerHand.AddCard(card, true);
-                if (dealerHand != null) foreach (PlayingCard card in Game.DealerHand) dealerHand.AddCard(card, false);
+                for (int i = 0; i < Game.PlayerHand.Count; i++)
+                {
+                    if (handTransfers != null)
+                    {
+                        yield return handTransfers.DrawToHand(playerHand, Game.PlayerHand[i], true, i, true);
+                        yield return handTransfers.DrawToHand(dealerHand, Game.DealerHand[i], false, i, false);
+                    }
+                    else
+                    {
+                        if (playerHand != null) yield return playerHand.AddCardAnimated(Game.PlayerHand[i], true, i, true);
+                        if (dealerHand != null) yield return dealerHand.AddCardAnimated(Game.DealerHand[i], false, i, false);
+                    }
+                }
             }
             else if (cue.Timing == DuelTiming.CardSelected && cue.Card.HasValue)
             {

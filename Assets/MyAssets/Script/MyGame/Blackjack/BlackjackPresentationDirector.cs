@@ -77,7 +77,8 @@ namespace Casino.Blackjack
                 case BlackjackTiming.CardDealt:
                     SetText("");
                     yield return cameras.SwitchTo(CardCameraView.Table);
-                    yield return tableCards.Place(cue.Card.Value, cue.Actor == BlackjackActor.Player, cue.CardIndex, cue.FaceUp);
+                    yield return tableCards.Place(cue.Card.Value, cue.Actor == BlackjackActor.Player, cue.CardIndex, cue.FaceUp,
+                        animate: cue.Actor == BlackjackActor.Player, glide: true);
                     break;
                 case BlackjackTiming.BeforePlayerDecision:
                     SetText(""); yield return cameras.SwitchTo(CardCameraView.Normal); break;

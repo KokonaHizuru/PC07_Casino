@@ -11,6 +11,7 @@ namespace Casino.Blackjack
     {
         [SerializeField] private CardHandUI playerHand;
         [SerializeField] private CardHandUI dealerHand;
+        [SerializeField] private TableCardPresenter handTransfers;
         private bool presentationRunning;
         private long appliedCueId;
         public BlackjackGame Game { get; private set; }
@@ -20,7 +21,7 @@ namespace Casino.Blackjack
         public event Action<Exception> PresentationFailed;
 
         /// <summary>ブラックジャックでは手札をドラッグせず、行動ボタンで操作する。</summary>
-        private void Awake() { playerHand?.SetInteractable(false); dealerHand?.SetInteractable(false); }
+        private void Awake() { if (handTransfers == null) handTransfers = GetComponentInChildren<TableCardPresenter>(); playerHand?.SetInteractable(false); dealerHand?.SetInteractable(false); }
 
         /// <summary>保存データへ接続する。</summary>
         /// <param name="data">保存データ。</param>
@@ -72,7 +73,11 @@ namespace Casino.Blackjack
             {
                 if (cue.Timing == BlackjackTiming.RoundStarted) { playerHand?.Clear(); dealerHand?.Clear(); }
                 else if (cue.Timing == BlackjackTiming.CardDealt)
-                    (cue.Actor == BlackjackActor.Player ? playerHand : dealerHand)?.AddCard(cue.Card.Value, cue.FaceUp);
+                {
+                    var hand = cue.Actor == BlackjackActor.Player ? playerHand : dealerHand;
+                    if (handTransfers != null) yield return handTransfers.DrawToHand(hand, cue.Card.Value, cue.Actor == BlackjackActor.Player, cue.CardIndex, cue.FaceUp);
+                    else if (hand != null) yield return hand.AddCardAnimated(cue.Card.Value, cue.FaceUp, cue.CardIndex, cue.Actor == BlackjackActor.Player);
+                }
                 else if (cue.Timing == BlackjackTiming.CardRevealed && dealerHand != null)
                     dealerHand.GetCard(cue.CardIndex).SetFaceUp(true);
                 appliedCueId = cue.Id;

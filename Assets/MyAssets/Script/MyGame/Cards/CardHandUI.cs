@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,6 +19,10 @@ namespace Casino.Cards
         [SerializeField, Min(0f)] private float curveDepth;
         [Tooltip("両端のカードの傾き。中央は直立し、左右へ扇状に開く。")]
         [SerializeField, Range(0f, 30f)] private float fanAngle;
+        [SerializeField, Min(.01f)] private float drawDuration = .3f;
+        [SerializeField] private Vector2 drawOffset = new Vector2(0, 160);
+        private readonly Dictionary<PlayingCard, Arrival> arrivals = new Dictionary<PlayingCard, Arrival>();
+        private sealed class Arrival { public CardView View; public float Elapsed; public bool Finished; }
 
         private readonly List<CardView> cards = new List<CardView>();
         private RectTransform rect;
@@ -94,6 +99,37 @@ namespace Casino.Cards
         /// <param name="index">手札内の位置。</param>
         public CardView GetCard(int index) => cards[index];
 
+        /// <summary>指定位置へカードを挿入し、手元から扇状の配置へ入る演出を待つ。</summary>
+        /// <param name="card">追加するカード。</param>
+        /// <param name="faceUp">表向きにするか。</param>
+        /// <param name="index">挿入位置。</param>
+        /// <param name="player">画面下のプレイヤー側か。</param>
+        public IEnumerator AddCardAnimated(PlayingCard card, bool faceUp, int index, bool player)
+        {
+            if (!arrivals.TryGetValue(card, out Arrival arrival))
+            {
+                CardView view = cards.Find(item => item.Card.Equals(card));
+                if (view == null)
+                {
+                    view = AddCard(card, faceUp);
+                    cards.Remove(view); cards.Insert(Mathf.Clamp(index, 0, cards.Count), view);
+                }
+                arrival = new Arrival { View = view }; arrivals.Add(card, arrival);
+            }
+            if (arrival.Finished) yield break;
+            if (!player) { LayoutCards(); arrival.Finished = true; yield break; }
+            float duration = Mathf.Max(.01f, drawDuration);
+            while (arrival.Elapsed < duration)
+            {
+                LayoutCards();
+                float t = Mathf.SmoothStep(0, 1, arrival.Elapsed / duration);
+                arrival.View.Rect.anchoredPosition += new Vector2(drawOffset.x, player ? drawOffset.y : -drawOffset.y) * (1 - t);
+                arrival.Elapsed += Time.unscaledDeltaTime;
+                yield return null;
+            }
+            LayoutCards(); arrival.Finished = true;
+        }
+
         /// <summary>カードを手札から削除する。プレイ通知は行わない。</summary>
         /// <param name="card">削除するカード。</param>
         public bool RemoveCard(PlayingCard card)
@@ -101,6 +137,7 @@ namespace Casino.Cards
             CardView view = cards.Find(item => item.Card.Equals(card));
             if (view == null) return false;
             cards.Remove(view);
+            arrivals.Remove(card);
             if (SelectedCard == view) Select(null);
             view.gameObject.SetActive(false);
             Destroy(view.gameObject);
@@ -118,6 +155,7 @@ namespace Casino.Cards
                 Destroy(card.gameObject);
             }
             cards.Clear();
+            arrivals.Clear();
         }
 
         /// <summary>ホバー中のカードを選択して外部へ通知する。</summary>

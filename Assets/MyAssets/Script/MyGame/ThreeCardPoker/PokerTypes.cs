@@ -3,15 +3,16 @@ using Casino.Cards;
 
 namespace Casino.ThreeCardPoker
 {
-    public enum PokerState { Idle, Presenting, ChoosingAction, WaitingForFunds, Completed }
+    public enum PokerState { Idle, Presenting, ChoosingAction, WaitingForFunds, Completed, ChoosingExchange }
     public enum PokerActor { None, Player, Dealer }
-    public enum PokerAction { Play, Fold }
+    public enum PokerAction { Play, Fold, Exchange, KeepHand }
     public enum PokerResult { None, PlayerWin, DealerWin, Push, DealerNotQualified, PlayerFold }
     public enum PokerTiming
     {
         RoundStarted, AntePaid, CardDealt, CardsDealt, BeforePlayerDecision,
         BeforeAction, PlayBetPaid, ActionTaken, BeforeShowdown, BeforeCardReveal,
-        CardRevealed, QualificationChecked, FundsRequired, ResultDecided, Settled, RoundEnded
+        CardRevealed, QualificationChecked, FundsRequired, ResultDecided, Settled, RoundEnded,
+        BeforeDealerExchange, BeforePlayerExchange, BeforeExchange, CardExchanged, ExchangeSkipped, ExchangeFinished
     }
 
     /// <summary>演出に渡す変更不能な通知。非公開カードは信頼された表示コードだけで扱う。</summary>
@@ -21,6 +22,7 @@ namespace Casino.ThreeCardPoker
         public PokerTiming Timing { get; }
         public PokerActor Actor { get; }
         public PlayingCard? Card { get; }
+        public PlayingCard? PreviousCard { get; }
         public int CardIndex { get; }
         public bool FaceUp { get; }
         public PokerAction? Action { get; }
@@ -43,10 +45,12 @@ namespace Casino.ThreeCardPoker
         /// <param name="faceUp">表向きか。</param>
         /// <param name="action">行動。</param>
         /// <param name="amount">関連金額。</param>
+        /// <param name="previousCard">交換前のカード。</param>
         internal PokerCue(long id, PokerTiming timing, PokerGame game, PokerActor actor,
-            PlayingCard? card, int index, bool faceUp, PokerAction? action, long amount)
+            PlayingCard? card, int index, bool faceUp, PokerAction? action, long amount, PlayingCard? previousCard = null)
         {
             Id = id; Timing = timing; Actor = actor; Card = card; CardIndex = index; FaceUp = faceUp;
+            PreviousCard = previousCard;
             Action = action; Amount = amount; Result = game.Result; Balance = game.Balance; Bet = game.PlayerBet;
             Ante = game.Ante; PlayBet = game.PlayBet; DealerQualified = game.DealerQualified;
         }

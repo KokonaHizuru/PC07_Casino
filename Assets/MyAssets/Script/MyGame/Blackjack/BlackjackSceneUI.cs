@@ -1,3 +1,4 @@
+using Casino.Common;
 using System;
 using System.Collections;
 using UnityEngine;
@@ -20,12 +21,14 @@ namespace Casino.Blackjack
         [SerializeField] private Button nextRound;
         [SerializeField] private Button funding;
         [SerializeField] private Button retry;
+        [SerializeField] private CardGameChoiceLayout choiceLayout = new CardGameChoiceLayout();
         private PlayerData data;
         private bool presentationFailed;
 
         /// <summary>ボタンと状態通知を一度接続する。</summary>
         private void Awake()
         {
+            choiceLayout.Initialize(nextRound, hit, stand, doubleDown, funding, retry);
             hit.onClick.AddListener(Hit); stand.onClick.AddListener(Stand); doubleDown.onClick.AddListener(DoubleDown);
             nextRound.onClick.AddListener(NextRound); funding.onClick.AddListener(ResumeFunding); retry.onClick.AddListener(Retry);
             controller.StateChanged += Refresh; controller.PresentationFailed += Failed;
@@ -55,7 +58,7 @@ namespace Casino.Blackjack
             if (initialBet < 2 || initialBet % 2 != 0)
             {
                 status.text = "Initial Bet must be a positive even number.";
-                nextRound.interactable = true;
+                CardGameChoiceLayout.SetVisible(nextRound, true);
                 Debug.LogError("Initial Betには正の偶数を指定してください。", this); return;
             }
             controller.StartRound(initialBet);
@@ -77,12 +80,15 @@ namespace Casino.Blackjack
         private void Refresh(BlackjackState state)
         {
             var game = controller.Game; if (game == null) return;
-            hit.interactable = game.CanAct(BlackjackAction.Hit); stand.interactable = game.CanAct(BlackjackAction.Stand);
-            doubleDown.interactable = game.CanAct(BlackjackAction.DoubleDown);
-            nextRound.interactable = state == BlackjackState.Completed;
-            funding.gameObject.SetActive(state == BlackjackState.WaitingForFunds); retry.gameObject.SetActive(presentationFailed);
+            CardGameChoiceLayout.SetVisible(hit, !presentationFailed && game.CanAct(BlackjackAction.Hit));
+            CardGameChoiceLayout.SetVisible(stand, !presentationFailed && game.CanAct(BlackjackAction.Stand));
+            CardGameChoiceLayout.SetVisible(doubleDown, !presentationFailed && game.CanAct(BlackjackAction.DoubleDown));
+            CardGameChoiceLayout.SetVisible(nextRound, !presentationFailed && state == BlackjackState.Completed);
+            CardGameChoiceLayout.SetVisible(funding, !presentationFailed && state == BlackjackState.WaitingForFunds);
+            CardGameChoiceLayout.SetVisible(retry, presentationFailed);
+            choiceLayout.Refresh();
             string opponent = game.DealerVisibleScore.Total + (!game.DealerHoleRevealed && game.DealerCards.Count > 1 ? " + ?" : "");
-            string prompt = presentationFailed ? "Presentation stopped - Retry" : state == BlackjackState.ChoosingAction ? "Hit / Stand / Double Down"
+            string prompt = presentationFailed ? "Presentation stopped - Retry" : state == BlackjackState.ChoosingAction ? (game.CanAct(BlackjackAction.DoubleDown) ? "Hit / Stand / Double Down" : "Hit / Stand")
                 : state == BlackjackState.WaitingForFunds ? $"Required {game.RequiredFunds} / Shortage {game.Shortage}"
                 : state == BlackjackState.Completed ? "Round complete" : "";
             status.text = $"{(previewMode ? "PREVIEW  " : "")}Money {game.Balance}   Bet {game.PlayerBet}   PLAYER {game.PlayerScore.Total} / DEALER {opponent}\n{prompt}";
