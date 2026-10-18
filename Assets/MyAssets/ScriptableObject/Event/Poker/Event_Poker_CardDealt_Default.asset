@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84fb647ec5fc4aabb936c65078f44fcf, type: 3}
+  m_Name: Event_Poker_CardDealt_Default
+  m_EditorClassIdentifier: 
+  flagId: 
+  completionFlags: []
+  eventEnabled: 1
+  timing: 2
+  stage: 1
+  actor: 0
+  action: 0
+  result: 0
+  oncePerRound: 0
+  cameraView: 0
+  scenarioLabel: Event_Poker_CardDealt_Default
+  qualification: 0

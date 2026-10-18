@@ -17,6 +17,8 @@ namespace Casino.Blackjack
         [SerializeField] private Text comparisonText;
         [SerializeField, Min(0)] private float resultSeconds = 1.2f;
         [SerializeField] private BlackjackPresentationEvent[] events = Array.Empty<BlackjackPresentationEvent>();
+        [SerializeField] private Casino.Common.CasinoEventCatalog eventCatalog;
+        private readonly Casino.Common.PresentationEventSelection<BlackjackPresentationEvent> selection = new Casino.Common.PresentationEventSelection<BlackjackPresentationEvent>();
         private readonly HashSet<string> completedEvents = new HashSet<string>();
         private readonly HashSet<long> completedVisuals = new HashSet<long>();
         private readonly HashSet<BlackjackPresentationEvent> playedThisRound = new HashSet<BlackjackPresentationEvent>();
@@ -37,7 +39,7 @@ namespace Casino.Blackjack
             if (currentGame != controller.Game || cue.Timing == BlackjackTiming.RoundStarted && roundCueId != cue.Id)
             {
                 currentGame = controller.Game; roundCueId = cue.Id;
-                completedEvents.Clear(); completedVisuals.Clear(); playedThisRound.Clear(); playback?.Clear();
+                completedEvents.Clear(); completedVisuals.Clear(); playedThisRound.Clear(); selection.Clear(); playback?.Clear();
             }
             yield return PlayEvents(cue, BlackjackEventStage.BeforeVisual);
             if (!completedVisuals.Contains(cue.Id)) { yield return Visual(cue); completedVisuals.Add(cue.Id); }
@@ -49,17 +51,23 @@ namespace Casino.Blackjack
         /// <param name="stage">標準演出の前後。</param>
         private IEnumerator PlayEvents(BlackjackCue cue, BlackjackEventStage stage)
         {
-            for (int i = 0; i < events.Length; i++)
+            string selectionKey = cue.Id.ToString();
+            var entries = eventCatalog != null ? eventCatalog.blackjack : events;
+            var selected = selection.Select(selectionKey, entries, controller.PlayerData?.flag,
+                entry => (entry.Matches(cue, BlackjackEventStage.BeforeVisual) || entry.Matches(cue, BlackjackEventStage.AfterVisual))
+                    && (!entry.OncePerRound || !playedThisRound.Contains(entry)));
+            for (int i = 0; i < selected.Count; i++)
             {
-                var entry = events[i]; string key = cue.Id + ":" + (int)stage + ":" + i;
-                if (entry == null || !entry.Matches(cue, stage) || completedEvents.Contains(key)
-                    || entry.OncePerRound && playedThisRound.Contains(entry)) continue;
+                var entry = selected[i];
+                string key = selectionKey + ":" + i;
+                if (!entry.Matches(cue, stage) || completedEvents.Contains(key)) continue;
                 yield return cameras.SwitchTo(entry.CameraView);
                 if (!string.IsNullOrWhiteSpace(entry.ScenarioLabel))
                 {
                     if (playback == null) playback = new AdvScenarioPlayback(adv);
                     yield return playback.Play(entry.ScenarioLabel, key);
                 }
+                entry.ApplyCompletionFlags(controller.PlayerData.flag);
                 completedEvents.Add(key);
                 if (entry.OncePerRound) playedThisRound.Add(entry);
             }

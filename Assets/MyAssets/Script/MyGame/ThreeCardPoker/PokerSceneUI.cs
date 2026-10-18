@@ -25,12 +25,25 @@ namespace Casino.ThreeCardPoker
         [SerializeField] private Vector2 exchangeAreaOffset = Vector2.zero;
         [SerializeField] private Vector2 exchangeAreaSize = new Vector2(900, 300);
         [SerializeField] private CardGameChoiceLayout choiceLayout = new CardGameChoiceLayout();
+        private Casino.Story.CasinoRoundProgress progression;
         private PlayerData data;
         private bool presentationFailed;
+        public int CurrentBaseBet => !previewMode && GameInstance.Instance != null
+            ? GameInstance.Instance.casinoStory.GetBaseBet(Casino.Story.CasinoGameKind.Poker, initialBet) : initialBet;
+
+        /// <summary>次のラウンドから使う基本BETを変更する。</summary>
+        /// <param name="amount">変更後の基本BET。</param>
+        public void SetBaseBet(int amount)
+        {
+            if (amount <= 0) throw new ArgumentOutOfRangeException(nameof(amount));
+            if (previewMode) initialBet = amount;
+            else GameInstance.Instance.casinoStory.SetBaseBet(Casino.Story.CasinoGameKind.Poker, amount);
+        }
 
         /// <summary>ボタンと状態通知を一度接続する。</summary>
         private void Awake()
         {
+            progression = GetComponent<Casino.Story.CasinoRoundProgress>();
             choiceLayout.Initialize(nextRound, play, fold, keepHand, funding, retry);
             if (exchangeArea != null)
             {
@@ -65,14 +78,16 @@ namespace Casino.ThreeCardPoker
         /// <summary>次のラウンドを開始し、不正なBET設定は表示する。</summary>
         private void NextRound()
         {
-            if (initialBet < 1)
+            if (progression != null && progression.IsFinished) return;
+            int bet = CurrentBaseBet;
+            if (bet < 1)
             {
                 status.text = "Ante must be a positive integer.";
                 nextRound.interactable = true;
                 nextRound.gameObject.SetActive(true);
                 Debug.LogError("Initial Betには正の整数を指定してください。", this); return;
             }
-            controller.StartRound(initialBet);
+            controller.StartRound(bet);
         }
         /// <summary>確認用資金を補充するか、本番で補充した資金で再開する。</summary>
         private void ResumeFunding()
@@ -90,13 +105,14 @@ namespace Casino.ThreeCardPoker
         /// <param name="state">進行状態。</param>
         private void Refresh(PokerState state)
         {
+            if (progression != null) progression.Observe(state == PokerState.Completed);
             var game = controller.Game; if (game == null) return;
             CardGameChoiceLayout.SetVisible(play, !presentationFailed && game.CanAct(PokerAction.Play));
             CardGameChoiceLayout.SetVisible(fold, !presentationFailed && game.CanAct(PokerAction.Fold));
             bool exchanging = !presentationFailed && state == PokerState.ChoosingExchange;
             CardGameChoiceLayout.SetVisible(keepHand, exchanging);
             if (exchangeArea != null) exchangeArea.gameObject.SetActive(exchanging);
-            CardGameChoiceLayout.SetVisible(nextRound, !presentationFailed && state == PokerState.Completed);
+            CardGameChoiceLayout.SetVisible(nextRound, !presentationFailed && state == PokerState.Completed && (progression == null || !progression.IsFinished));
             CardGameChoiceLayout.SetVisible(funding, !presentationFailed && state == PokerState.WaitingForFunds);
             CardGameChoiceLayout.SetVisible(retry, presentationFailed);
             choiceLayout.Refresh(exchanging);

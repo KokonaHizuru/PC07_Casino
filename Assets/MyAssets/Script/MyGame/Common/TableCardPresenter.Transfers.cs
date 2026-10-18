@@ -11,6 +11,8 @@ namespace Casino.Common
         [SerializeField] private Transform deckAnchor;
         [SerializeField] private Transform discardAnchor;
         [SerializeField, Min(.01f)] private float transferDuration = .45f;
+        [Tooltip("プレイヤーへ3Dカードを配る時間（秒）。捨て札の移動時間はTransfer Durationで指定する。")]
+        [SerializeField, Min(.01f)] private float drawTransferDuration = .25f;
         [Tooltip("配布カードを場札の基準面から浮かせる高さ。配布の開始・終了の両方に適用する。")]
         [SerializeField, Min(0)] private float drawSurfaceClearance = .008f;
         [Tooltip("捨てる際の弧の高さ。配布は直進する。")]
@@ -77,7 +79,7 @@ namespace Casino.Common
                 motion = CreateTransfer(card, start, end, surface.rotation);
                 draws.Add(card, motion);
             }
-            yield return MoveTransfer(motion, 0);
+            yield return MoveTransfer(motion, 0, drawTransferDuration);
             if (motion.Model != null) { motion.Model.gameObject.SetActive(false); Destroy(motion.Model.gameObject); motion.Model = null; }
             if (hand != null) yield return hand.AddCardAnimated(card, faceUp, index, player);
         }
@@ -97,7 +99,7 @@ namespace Casino.Common
                     discardAnchor.position + discardAnchor.up * (discards.Count * discardThickness), discardAnchor.rotation);
                 discards.Add(card, motion);
             }
-            yield return MoveTransfer(motion, transferArc);
+            yield return MoveTransfer(motion, transferArc, transferDuration);
         }
 
         /// <summary>通常の場札とは別に、裏向きの移動モデルを生成する。</summary>
@@ -117,10 +119,11 @@ namespace Casino.Common
         /// <summary>中断時の経過時間を保持し、指定した弧の高さで移動する。</summary>
         /// <param name="motion">再開可能な移動情報。</param>
         /// <param name="arc">弧の高さ。0なら直進する。</param>
-        private IEnumerator MoveTransfer(Transfer motion, float arc)
+        /// <param name="seconds">移動にかける秒数。</param>
+        private IEnumerator MoveTransfer(Transfer motion, float arc, float seconds)
         {
             if (motion.Finished) yield break;
-            float duration = Mathf.Max(.01f, transferDuration);
+            float duration = Mathf.Max(.01f, seconds);
             while (motion.Elapsed < duration)
             {
                 float t = Mathf.SmoothStep(0, 1, motion.Elapsed / duration);

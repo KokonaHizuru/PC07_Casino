@@ -19,6 +19,7 @@ namespace Casino.Blackjack
         public event Action<BlackjackState> StateChanged;
         public event Func<BlackjackCue, IEnumerator> Presentation;
         public event Action<Exception> PresentationFailed;
+        public PlayerData PlayerData { get; private set; }
 
         /// <summary>ブラックジャックでは手札をドラッグせず、行動ボタンで操作する。</summary>
         private void Awake() { if (handTransfers == null) handTransfers = GetComponentInChildren<TableCardPresenter>(); playerHand?.SetInteractable(false); dealerHand?.SetInteractable(false); }
@@ -31,6 +32,7 @@ namespace Casino.Blackjack
             if (Game != null && Game.State != BlackjackState.Idle && Game.State != BlackjackState.Completed)
                 throw new InvalidOperationException("進行中は初期化できません。");
             Unsubscribe();
+            PlayerData = data;
             Game = new BlackjackGame(new PlayerDataCasinoWallet(data), seed);
             appliedCueId = 0; Game.CueRaised += OnCue; Game.StateChanged += OnState; OnState(Game.State);
         }

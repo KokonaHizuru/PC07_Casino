@@ -20,6 +20,7 @@ namespace Casino.ThreeCardPoker
         public event Action<PokerState> StateChanged;
         public event Func<PokerCue, IEnumerator> Presentation;
         public event Action<Exception> PresentationFailed;
+        public PlayerData PlayerData { get; private set; }
 
         /// <summary>交換先とドロップ通知を一度接続し、入力は交換ターンまで止める。</summary>
         private void Awake()
@@ -37,6 +38,7 @@ namespace Casino.ThreeCardPoker
             if (Game != null && Game.State != PokerState.Idle && Game.State != PokerState.Completed)
                 throw new InvalidOperationException("進行中は初期化できません。");
             Unsubscribe();
+            PlayerData = data;
             Game = new PokerGame(new PlayerDataCasinoWallet(data), seed);
             appliedCueId = 0; Game.CueRaised += OnCue; Game.StateChanged += OnState; OnState(Game.State);
         }

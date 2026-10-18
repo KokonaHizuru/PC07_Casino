@@ -51,3 +51,4 @@ MonoBehaviour:
   playArea: {fileID: 0}
   interactable: 1
   spacing: 200
+  drawDuration: 0.15

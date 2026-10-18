@@ -1,6 +1,7 @@
 # Blackjack
 
-`Assets/Scenes/Scene_Blackjack.unity` を開いて再生する。`BlackjackPresentation` の `BlackjackSceneUI` は初期状態で独立した確認用資金（Preview Mode、1000、BET 10）を使用する。
+2026-10-18更新：本編シーンはPreview Mode OFF、基本BET10、5ラウンド終了で専用EDへ遷移する。イベントは指定フォルダ直下からカタログへ自動登録し、Flag Idと終了後フラグ更新に対応。以下の旧プレビュー・手動Events登録の説明より、現在の設定は [StoryFlow.md](StoryFlow.md) を優先する。
+`Assets/Scenes/Scene_Blackjack.unity` を開いて再生する。`BlackjackPresentation` の `BlackjackSceneUI` は本編のPlayerDataと基本BET10を使用する。Preview ModeをONにすると独立した確認用資金を利用できる。
 
 ## 操作とルール
 

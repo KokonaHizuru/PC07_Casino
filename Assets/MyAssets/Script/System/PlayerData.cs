@@ -9,7 +9,7 @@ using UnityEngine.TextCore.Text;
 [Serializable]
 public class PlayerData
 {
-	// カジノの所持金。初期資金はゲーム開始側で設定する。
+	// カジノの所持金。New Game時にSetDefaultDataで初期化する。
 	public long casinoMoney;
 	// フラグ
 	public FlagData flag = new();
@@ -34,6 +34,7 @@ public class PlayerData
 	/// </summary>
 	public void SetDefaultData()
 	{
+		casinoMoney = 1000;
 	}
 
 	/// <summary>

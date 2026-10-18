@@ -17,6 +17,8 @@ namespace Casino.ThreeCardPoker
         [SerializeField] private Text comparisonText;
         [SerializeField, Min(0)] private float resultSeconds = 1.2f;
         [SerializeField] private PokerPresentationEvent[] events = Array.Empty<PokerPresentationEvent>();
+        [SerializeField] private Casino.Common.CasinoEventCatalog eventCatalog;
+        private readonly Casino.Common.PresentationEventSelection<PokerPresentationEvent> selection = new Casino.Common.PresentationEventSelection<PokerPresentationEvent>();
         private readonly HashSet<string> completedEvents = new HashSet<string>();
         private readonly HashSet<long> completedVisuals = new HashSet<long>();
         private readonly HashSet<PokerPresentationEvent> playedThisRound = new HashSet<PokerPresentationEvent>();
@@ -37,7 +39,7 @@ namespace Casino.ThreeCardPoker
             if (currentGame != controller.Game || cue.Timing == PokerTiming.RoundStarted && roundCueId != cue.Id)
             {
                 currentGame = controller.Game; roundCueId = cue.Id;
-                completedEvents.Clear(); completedVisuals.Clear(); playedThisRound.Clear(); playback?.Clear();
+                completedEvents.Clear(); completedVisuals.Clear(); playedThisRound.Clear(); selection.Clear(); playback?.Clear();
             }
             yield return PlayEvents(cue, PokerEventStage.BeforeVisual);
             if (!completedVisuals.Contains(cue.Id)) { yield return Visual(cue); completedVisuals.Add(cue.Id); }
@@ -49,17 +51,23 @@ namespace Casino.ThreeCardPoker
         /// <param name="stage">標準演出の前後。</param>
         private IEnumerator PlayEvents(PokerCue cue, PokerEventStage stage)
         {
-            for (int i = 0; i < events.Length; i++)
+            string selectionKey = cue.Id.ToString();
+            var entries = eventCatalog != null ? eventCatalog.poker : events;
+            var selected = selection.Select(selectionKey, entries, controller.PlayerData?.flag,
+                entry => (entry.Matches(cue, PokerEventStage.BeforeVisual) || entry.Matches(cue, PokerEventStage.AfterVisual))
+                    && (!entry.OncePerRound || !playedThisRound.Contains(entry)));
+            for (int i = 0; i < selected.Count; i++)
             {
-                var entry = events[i]; string key = cue.Id + ":" + (int)stage + ":" + i;
-                if (entry == null || !entry.Matches(cue, stage) || completedEvents.Contains(key)
-                    || entry.OncePerRound && playedThisRound.Contains(entry)) continue;
+                var entry = selected[i];
+                string key = selectionKey + ":" + i;
+                if (!entry.Matches(cue, stage) || completedEvents.Contains(key)) continue;
                 yield return cameras.SwitchTo(entry.CameraView);
                 if (!string.IsNullOrWhiteSpace(entry.ScenarioLabel))
                 {
                     if (playback == null) playback = new AdvScenarioPlayback(adv);
                     yield return playback.Play(entry.ScenarioLabel, key);
                 }
+                entry.ApplyCompletionFlags(controller.PlayerData.flag);
                 completedEvents.Add(key);
                 if (entry.OncePerRound) playedThisRound.Add(entry);
             }

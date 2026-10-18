@@ -90,7 +90,7 @@ namespace Casino.Common
             tableCamera.Priority = view == CardCameraView.Table ? 100 : 0;
             if (!target.isActiveAndEnabled || !brain.isActiveAndEnabled)
                 throw new InvalidOperationException("切り替え先カメラとBrainを有効にしてください。");
-            bool hide = view == CardCameraView.Table;
+            bool hide = ShouldHideHands(view);
             Canvas.ForceUpdateCanvases();
             playerSlide?.Prepare(hide, false, hiddenPadding, hide && !handsHidden);
             dealerSlide?.Prepare(hide, true, hiddenPadding, hide && !handsHidden);
@@ -113,5 +113,9 @@ namespace Casino.Common
             playerSlide?.Apply(1f);
             dealerSlide?.Apply(1f);
         }
+
+        /// <summary>切替後の視点で手札を画面外へ退避するかを判定する。</summary>
+        /// <param name="view">切り替える視点。</param>
+        protected virtual bool ShouldHideHands(CardCameraView view) => view == CardCameraView.Table;
     }
 }

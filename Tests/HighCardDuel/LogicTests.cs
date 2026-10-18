@@ -31,6 +31,40 @@ public static class LogicTests
         public DuelAction RespondToRaise(DealerDecisionContext context) { Contexts.Add(context); return Response; }
     }
 
+    /// <summary>高額Raiseの適用・差額Call・資金不足復帰・次フェーズの通常額を検証する。</summary>
+    private static void TestDealerRaiseOverride()
+    {
+        var wallet = new Wallet { Balance = 50 };
+        var dealer = new Dealer { Opening = DuelAction.Raise };
+        var game = new HighCardDuelGame(wallet, dealer, 17);
+        bool overridden = false;
+        game.CueRaised += cue =>
+        {
+            if (cue.Timing == DuelTiming.BeforeAction && cue.Actor == DuelActor.Dealer && cue.Action == DuelAction.Raise && !overridden)
+            {
+                Check(!game.SetCurrentDealerRaise(0), "Zero raise rejected");
+                Check(game.SetCurrentDealerRaise(100), "Current raise accepted");
+                overridden = true;
+            }
+            game.CompletePresentation(cue.Id);
+        };
+        Check(!game.SetCurrentDealerRaise(100), "Raise outside presentation rejected");
+        game.StartRound(10);
+        game.SelectCard(game.PlayerHand[0]);
+        Check(game.DealerBet == 110 && game.CallAmount == 100, "Dealer adds 100 and Call matches difference");
+        game.Act(DuelAction.Call);
+        Check(game.State == DuelState.WaitingForFunds && game.RequiredFunds == 100 && game.Shortage == 60, "Custom Call waits for actual shortage");
+        wallet.Balance += 100;
+        Check(game.ResumeAfterFunding(), "Funding resumes custom Call");
+        Check(game.PlayerBet == 110 && wallet.Balance == 40, "Custom Call charged once");
+        game.SelectCard(game.PlayerHand[0]);
+        Check(game.DealerBet == 120 && game.CallAmount == 10, "Override consumed, next Raise is normal");
+        game.Act(DuelAction.Call);
+        game.SelectCard(game.PlayerHand[0]);
+        long payout = game.Result == DuelResult.PlayerWin ? 240 : game.Result == DuelResult.Push ? 120 : 0;
+        Check(game.Payout == payout && wallet.Balance == 30 + payout && wallet.Credits == 1, "Settlement uses actual bets once");
+    }
+
     /// <summary>条件を確認する。</summary>
     /// <param name="value">期待する真偽。</param>
     /// <param name="message">検証内容。</param>
@@ -99,6 +133,7 @@ public static class LogicTests
     /// <summary>一連の正常終了・Fold・資金不足・AI確率を検証する。</summary>
     public static void Main()
     {
+        TestDealerRaiseOverride();
         CheckBeforeAction();
         var outcomes = new HashSet<DuelResult>();
         for (int seed = 0; seed < 300; seed++)

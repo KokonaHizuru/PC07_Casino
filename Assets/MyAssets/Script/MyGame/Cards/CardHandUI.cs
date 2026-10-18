@@ -19,7 +19,8 @@ namespace Casino.Cards
         [SerializeField, Min(0f)] private float curveDepth;
         [Tooltip("両端のカードの傾き。中央は直立し、左右へ扇状に開く。")]
         [SerializeField, Range(0f, 30f)] private float fanAngle;
-        [SerializeField, Min(.01f)] private float drawDuration = .3f;
+        [Tooltip("配られたカードがUI手札へ入る時間（秒）。3Dでの配布が終わった後に実行する。")]
+        [SerializeField, Min(.01f)] private float drawDuration = .15f;
         [SerializeField] private Vector2 drawOffset = new Vector2(0, 160);
         private readonly Dictionary<PlayingCard, Arrival> arrivals = new Dictionary<PlayingCard, Arrival>();
         private sealed class Arrival { public CardView View; public float Elapsed; public bool Finished; }

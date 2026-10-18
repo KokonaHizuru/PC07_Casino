@@ -6,56 +6,41 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/LobbyScene.unity
-    guid: b480a3b950aa5244288677fb7e39d761
+    path: Assets/Scenes/TitleScene.unity
+    guid: 190c22c2d2bd4c044a22f8943f6c2c64
   - enabled: 1
-    path: Assets/Scenes/LobbyMap/LobbyMap_Area1.unity
-    guid: b0b47359a8806b445a83702614cc1af6
+    path: Assets/Scenes/OpeningScene.unity
+    guid: ae8c30a337754fc094fef874939073d7
   - enabled: 1
-    path: Assets/Scenes/LobbyMap/LobbyMap_Area2.unity
-    guid: 6ddb6bb84f954c041a911c2af760fdbe
+    path: Assets/Scenes/Scene_HightAndLow.unity
+    guid: 023ace4cad1439e4387ca4990a5e7e77
+  - enabled: 1
+    path: Assets/Scenes/HighCardEndingScene.unity
+    guid: 71f8841583a34bb2aa88157fa0782bbf
+  - enabled: 1
+    path: Assets/Scenes/PokerOpeningScene.unity
+    guid: 38caff0d8a1641a181430042df31ecec
+  - enabled: 1
+    path: Assets/Scenes/Scene_Poker.unity
+    guid: deea23fbb35230c4d9afb73fd69ed614
+  - enabled: 1
+    path: Assets/Scenes/PokerEndingScene.unity
+    guid: 4847207873004c72a34470b72d2fe6c0
+  - enabled: 1
+    path: Assets/Scenes/BlackjackOpeningScene.unity
+    guid: c860479ddb5e4005a30514e72c3b231e
+  - enabled: 1
+    path: Assets/Scenes/Scene_Blackjack.unity
+    guid: 6be10c17e9eb15e4b8a7dc614ac79a36
+  - enabled: 1
+    path: Assets/Scenes/BlackjackEndingScene.unity
+    guid: 9f7568c583db48918a832601579b5bd4
+  - enabled: 1
+    path: Assets/Scenes/EndingScene.unity
+    guid: c6062e58536e7604ab7f48f6e7003a6b
   - enabled: 1
     path: Assets/Scenes/AdvEngineScene.unity
     guid: 4251024474020e4479269d1f63e71d6e
-  - enabled: 1
-    path: Assets/Scenes/DungeonScene.unity
-    guid: 6a431842e930e2b4196024dcacc8fb15
-  - enabled: 1
-    path: Assets/Scenes/AddBattleScene.unity
-    guid: 32aa1f7057191ec46841cbf17d10cb49
-  - enabled: 1
-    path: Assets/Scenes/AddMysteryScene.unity
-    guid: 2fa93e27b7e4ee44cb9349a8dee43f5c
-  - enabled: 1
-    path: Assets/Scenes/Mystery/AddMysteryScene_Test.unity
-    guid: 563b085a5ff6ecb459f5d0e0825a557f
-  - enabled: 1
-    path: Assets/Scenes/AddShopScene.unity
-    guid: d800f1cd5cb0e8f45b29e85f102388eb
-  - enabled: 1
-    path: Assets/Scenes/AddRestScene.unity
-    guid: 2a857a09b427252418e0e9e3a0174263
-  - enabled: 1
-    path: Assets/Scenes/Debug/DebugDungeonEventScene.unity
-    guid: c9135082093d3554b84bfff3aaf636a3
-  - enabled: 1
-    path: Assets/Scenes/Mystery/AddMysteryScene_SkillGet.unity
-    guid: aa06059e6aadd9d458843f15b745483a
-  - enabled: 1
-    path: Assets/Scenes/AddTreasureScene.unity
-    guid: 6b5588f0ac0645c9b939834e951a8e14
-  - enabled: 1
-    path: Assets/Scenes/Mystery/AddMysteryScene_Treasure.unity
-    guid: 1ff8ee469aa49b143be5136f737542a2
-  - enabled: 1
-    path: Assets/Scenes/Mystery/AddMysteryScene_Reward.unity
-    guid: c1406cd6aaf14c56b054ad99324c4e7e
-  - enabled: 1
-    path: Assets/Scenes/Mystery/AddMysteryScene_Rest.unity
-    guid: 24145eceeea5c044abb39b140cd6d9f3
-  - enabled: 1
-    path: Assets/Scenes/Mystery/AddMysteryScene_Shop.unity
-    guid: 85b72770b1bb802459e647f8bf12a715
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

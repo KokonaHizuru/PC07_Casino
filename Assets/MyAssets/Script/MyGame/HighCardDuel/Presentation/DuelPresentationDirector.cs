@@ -18,6 +18,8 @@ namespace Casino.HighCardDuel
         [Tooltip("一致したイベントを上から順番に実行する。")]
         [SerializeField] private DuelPresentationEvent[] events = Array.Empty<DuelPresentationEvent>();
         private readonly HashSet<DuelPresentationEvent> playedThisRound = new HashSet<DuelPresentationEvent>();
+        [SerializeField] private Casino.Common.CasinoEventCatalog eventCatalog;
+        private readonly Casino.Common.PresentationEventSelection<DuelPresentationEvent> selection = new Casino.Common.PresentationEventSelection<DuelPresentationEvent>();
         private readonly HashSet<string> completedEvents = new HashSet<string>();
         private readonly HashSet<long> completedVisuals = new HashSet<long>();
         private Casino.Common.AdvScenarioPlayback playback;
@@ -45,7 +47,15 @@ namespace Casino.HighCardDuel
             {
                 currentGame = controller.Game;
                 roundCueId = cue.Id;
-                playedThisRound.Clear(); completedEvents.Clear(); completedVisuals.Clear(); playback?.Clear();
+                playedThisRound.Clear(); selection.Clear(); completedEvents.Clear(); completedVisuals.Clear(); playback?.Clear();
+            }
+            // ADV側の視点切替でもBET中に手札が戻らないよう、イベント再生前に方針を更新する。
+            if (cameras != null)
+            {
+                if (cue.Timing == DuelTiming.RoundStarted || cue.Timing == DuelTiming.BeforeCardSelection)
+                    cameras.KeepHandsHidden = false;
+                else if (cue.Timing == DuelTiming.BeforeCardReveal)
+                    cameras.KeepHandsHidden = true;
             }
             yield return PlayEvents(cue, DuelEventStage.BeforeVisual);
             if (!completedVisuals.Contains(cue.Id))
@@ -61,18 +71,23 @@ namespace Casino.HighCardDuel
         /// <param name="stage">標準演出の前後。</param>
         private IEnumerator PlayEvents(DuelCue cue, DuelEventStage stage)
         {
-            for (int i = 0; i < events.Length; i++)
+            string selectionKey = cue.Id.ToString();
+            var entries = eventCatalog != null ? eventCatalog.hightCard : events;
+            var selected = selection.Select(selectionKey, entries, controller.PlayerData?.flag,
+                entry => (entry.Matches(cue, DuelEventStage.BeforeVisual) || entry.Matches(cue, DuelEventStage.AfterVisual))
+                    && (!entry.OncePerRound || !playedThisRound.Contains(entry)));
+            for (int i = 0; i < selected.Count; i++)
             {
-                DuelPresentationEvent entry = events[i];
-                string key = cue.Id + ":" + (int)stage + ":" + i;
-                if (entry == null || !entry.Matches(cue, stage) || completedEvents.Contains(key)
-                    || entry.OncePerRound && playedThisRound.Contains(entry)) continue;
+                var entry = selected[i];
+                string key = selectionKey + ":" + i;
+                if (!entry.Matches(cue, stage) || completedEvents.Contains(key)) continue;
                 if (entry.CameraView != DuelCameraView.Unchanged)
                 {
                     if (cameras == null) throw new InvalidOperationException("視点を変更するイベントにはCamera Rigが必要です。");
                     yield return cameras.SwitchTo(entry.CameraView);
                 }
                 if (!string.IsNullOrWhiteSpace(entry.ScenarioLabel)) yield return PlayScenario(entry.ScenarioLabel, key);
+                entry.ApplyCompletionFlags(controller.PlayerData.flag);
                 completedEvents.Add(key);
                 if (entry.OncePerRound) playedThisRound.Add(entry);
             }

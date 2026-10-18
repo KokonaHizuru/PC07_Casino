@@ -8,7 +8,7 @@ namespace Casino.HighCardDuel
 
     /// <summary>演出タイミングと宴のシナリオラベルを対応付ける設定。</summary>
     [CreateAssetMenu(menuName = "Casino/High Card Duel/Presentation Event")]
-    public sealed class DuelPresentationEvent : ScriptableObject
+    public sealed class DuelPresentationEvent : Casino.Common.PresentationEventDefinition
     {
         [SerializeField] private bool eventEnabled = true;
         [SerializeField] private DuelTiming timing = DuelTiming.BeforeCardSelection;

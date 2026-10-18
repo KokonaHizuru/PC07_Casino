@@ -651,9 +651,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 385160061}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Script: {fileID: 11500000, guid: e7b5b4ce462f33743be353edc20a8f30, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_EditorClassIdentifier: Assembly-CSharp::ScrollViewButton
 --- !u!1001 &404090709
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2670,7 +2670,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 277052141631412641, guid: fc9e9ff51320b334bb1db35b63f6b7e6, type: 3}
       propertyPath: m_text
-      value: "\u30D5\u30EA\u30FC\u30E2\u30FC\u30C9"
+      value: "\u30AE\u30E3\u30E9\u30EA\u30FC"
       objectReference: {fileID: 0}
     - target: {fileID: 1710361840145385969, guid: fc9e9ff51320b334bb1db35b63f6b7e6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -2710,7 +2710,7 @@ PrefabInstance:
       objectReference: {fileID: 7647617590634580812, guid: 766def1e898132e4b9d59df21efccad5, type: 3}
     - target: {fileID: 5913990696732159158, guid: fc9e9ff51320b334bb1db35b63f6b7e6, type: 3}
       propertyPath: m_Name
-      value: FreeModeButton
+      value: GalleryButton
       objectReference: {fileID: 0}
     - target: {fileID: 7753205626364532631, guid: fc9e9ff51320b334bb1db35b63f6b7e6, type: 3}
       propertyPath: m_Pivot.x

@@ -1,6 +1,7 @@
 # スリーカード・ポーカー
 
-`Assets/Scenes/Scene_Poker.unity` を開いて再生する。`PokerPresentation` の `PokerSceneUI` は、既定で独立した確認用資金1000、Ante 10を使う。
+2026-10-18更新：本編シーンはPreview Mode OFF、基本BET10、5ラウンド終了で専用EDへ遷移する。イベントは指定フォルダ直下からカタログへ自動登録し、Flag Idと終了後フラグ更新に対応。以下の旧プレビュー・手動Events登録の説明より、現在の設定は [StoryFlow.md](StoryFlow.md) を優先する。
+`Assets/Scenes/Scene_Poker.unity` を開いて再生する。`PokerPresentation` の `PokerSceneUI` は、既定で本編のPlayerData、Ante 10を使う。独立した確認用資金はPreview ModeをONにした場合のみ使用する。
 
 ## 操作とルール
 

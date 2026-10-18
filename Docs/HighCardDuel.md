@@ -1,5 +1,6 @@
 # ハイカード・デュエル：ロジックと演出の接続
 
+2026-10-18更新：本編シーンはPreview Mode OFF、基本BET10、5ラウンド終了で専用EDへ遷移する。イベントは指定フォルダ直下からカタログへ自動登録し、Flag Idと終了後フラグ更新に対応。以下の旧プレビュー・手動Events登録の説明より、現在の設定は [StoryFlow.md](StoryFlow.md) を優先する。
 2026-10-16：ブラックジャック追加に伴い、資金接続、カードモデル、机上配置、カメラ／手札退避、宴の待機、演出コルーチンの実行を `MyGame/Common` に共通化した。既存のDuelコンポーネントは互換ラッパーとして残し、既存シーンの参照やInspector設定を引き継ぐ。ゲーム固有のルール・SOイベントは分離している。共通部分の一覧は `Blackjack.md` を参照。
 
 スクリプトは `Assets/MyAssets/Script/MyGame/HighCardDuel`、名前空間は `Casino.HighCardDuel`。

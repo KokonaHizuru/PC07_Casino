@@ -19,9 +19,9 @@
 - 各シーンの `DeckAnchor`：対面のディーラー側にある配布開始位置。ここからプレイヤーの手元へ直進する。
 - `DiscardAnchor`：捨て札の位置と机面の向き。
 - 既存の `PlayerOrigin` / `DealerOrigin`：各手元の受け取り・投げ始め位置。
-- TableCardPresenterの `Transfer Duration` / `Transfer Arc` / `Discard Thickness`：移動時間・捨てる際だけの弧の高さ・捨て札の積み幅。
+- TableCardPresenterの `Draw Transfer Duration`：3D配布の移動時間（0.25秒）。`Transfer Duration` / `Transfer Arc` / `Discard Thickness`：捨て札の移動時間（0.45秒）・弧の高さ・積み幅。
 - `Draw Surface Clearance`：場札の基準面から配布カードを浮かせる高さ（既定0.008）。配布の開始・終了をこの高さへ揃える。DeckAnchorとPlayerOriginは配布方向・水平位置を指定し、配布時の高さはこの値を使う。
-- 各CardHandUIの `Draw Duration` / `Draw Offset`：プレイヤーのUIへ入る時間・開始位置からのずれ。ディーラーのUI追加は即時。
+- 各CardHandUIの `Draw Duration` / `Draw Offset`：プレイヤーのUIへ入る時間（0.15秒）・開始位置からのずれ。ディーラーのUI追加は即時。
 
 既存シーンにはアンカーを設定済み。新しいシーンでアンカー未指定の場合、配布開始位置はDealerOrigin、捨て札位置は最初のプレイヤー用スロットを基準に起動時に作る。任意のTransformを設定すればその位置を使用する。
 

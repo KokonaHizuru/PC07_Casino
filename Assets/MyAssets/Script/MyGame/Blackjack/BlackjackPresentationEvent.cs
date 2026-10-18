@@ -8,7 +8,7 @@ namespace Casino.Blackjack
 
     /// <summary>ブラックジャックのタイミングに会話と視点を対応付ける。</summary>
     [CreateAssetMenu(menuName = "Casino/Blackjack/Presentation Event")]
-    public sealed class BlackjackPresentationEvent : ScriptableObject
+    public sealed class BlackjackPresentationEvent : Casino.Common.PresentationEventDefinition
     {
         [SerializeField] private bool eventEnabled = true;
         [SerializeField] private BlackjackTiming timing = BlackjackTiming.BeforePlayerDecision;

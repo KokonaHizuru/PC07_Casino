@@ -23,6 +23,7 @@ namespace Casino.HighCardDuel
         // 複数登録された処理は登録順に実行し、全処理が終了してから進行する。
         public event Func<DuelCue, IEnumerator> Presentation;
         public event Action<Exception> PresentationFailed;
+        public PlayerData PlayerData { get; private set; }
 
         /// <summary>初期化まで手札操作を止め、ドラッグ通知を購読する。</summary>
         private void Awake()
@@ -46,6 +47,7 @@ namespace Casino.HighCardDuel
             if (Game != null && Game.State != DuelState.Idle && Game.State != DuelState.Completed)
                 throw new InvalidOperationException("進行中のゲームは再初期化できません。");
             UnsubscribeGame();
+            PlayerData = data;
             Game = new HighCardDuelGame(new PlayerDataDuelWallet(data), dealer ?? new HighCardDealer(dealerSettings, seed), seed);
             appliedCueId = 0;
             Game.CueRaised += OnCue;

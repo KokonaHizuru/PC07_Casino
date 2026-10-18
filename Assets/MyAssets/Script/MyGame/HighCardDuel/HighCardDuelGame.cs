@@ -19,6 +19,8 @@ namespace Casino.HighCardDuel
         private Action retryPayment;
         private long nextCueId;
         private bool dealerRaised;
+        private int dealerRaiseOverride;
+        public long CallAmount => Math.Max(0, DealerBet - PlayerBet);
 
         public DuelState State { get; private set; } = DuelState.Idle;
         public DuelResult Result { get; private set; }
@@ -62,6 +64,7 @@ namespace Casino.HighCardDuel
             if (State != DuelState.Idle && State != DuelState.Completed) return false;
             if (initialBet <= 0) return false;
             InitialBet = initialBet; Phase = 0; PlayerBet = 0; DealerBet = 0; Payout = 0;
+            dealerRaiseOverride = 0;
             Result = DuelResult.None; RequiredFunds = 0; retryPayment = null; dealerRaised = false;
             playerHand.Clear(); dealerHand.Clear(); playerOpen.Clear(); dealerOpen.Clear();
             Present(DuelTiming.RoundStarted, PayInitialBet);
@@ -159,11 +162,23 @@ namespace Casino.HighCardDuel
             Present(DuelTiming.BeforeAction, () =>
             {
                 dealerRaised = action == DuelAction.Raise;
-                if (dealerRaised) DealerBet += InitialBet;
+                int raiseAmount = dealerRaised ? (dealerRaiseOverride > 0 ? dealerRaiseOverride : InitialBet) : 0;
+                dealerRaiseOverride = 0;
+                DealerBet += raiseAmount;
                 Present(DuelTiming.ActionTaken, () =>
                     Present(DuelTiming.BeforeBetDecision, () => ChangeState(DuelState.ChoosingBet), DuelActor.Player),
-                    DuelActor.Dealer, action: action, amount: dealerRaised ? InitialBet : 0);
+                    DuelActor.Dealer, action: action, amount: raiseAmount);
             }, DuelActor.Dealer, action: action, amount: action == DuelAction.Raise ? InitialBet : 0);
+        }
+
+        /// <summary>現在待機中のディーラーRaiseだけに追加額を指定する。</summary>
+        /// <param name="amount">今回だけ追加する正の整数額。</param>
+        public bool SetCurrentDealerRaise(int amount)
+        {
+            if (amount <= 0 || PendingCue == null || PendingCue.Timing != DuelTiming.BeforeAction
+                || PendingCue.Actor != DuelActor.Dealer || PendingCue.Action != DuelAction.Raise) return false;
+            dealerRaiseOverride = amount;
+            return true;
         }
 
         /// <summary>現在選べるBET行動か判定する。</summary>
@@ -180,30 +195,32 @@ namespace Casino.HighCardDuel
         public bool Act(DuelAction action)
         {
             if (!CanAct(action)) return false;
+            long amount = action == DuelAction.Call ? CallAmount : action == DuelAction.Raise ? InitialBet : 0;
             // 支払い開始前に入力を閉じ、同フレームの二重操作を防ぐ。
             Present(DuelTiming.BeforeAction, () =>
             {
                 if (action == DuelAction.Call || action == DuelAction.Raise)
-                    PayPlayer(InitialBet, () => FinishPlayerAction(action));
-                else FinishPlayerAction(action);
+                    PayPlayer(amount, () => FinishPlayerAction(action, amount));
+                else FinishPlayerAction(action, 0);
             }, DuelActor.Player, action: action,
-                amount: action == DuelAction.Call || action == DuelAction.Raise ? InitialBet : 0);
+                amount: amount);
             return true;
         }
 
         /// <summary>支払い後の行動演出とその後の進行を設定する。</summary>
         /// <param name="action">確定したプレイヤーの行動。</param>
-        private void FinishPlayerAction(DuelAction action)
+        /// <param name="amount">実際に追加支払いした金額。</param>
+        private void FinishPlayerAction(DuelAction action, long amount)
         {
             bool paid = action == DuelAction.Call || action == DuelAction.Raise;
-            if (paid) PlayerBet += InitialBet;
+            if (paid) PlayerBet += amount;
             Present(DuelTiming.ActionTaken, () =>
             {
                 if (action == DuelAction.Fold) DecideResult(DuelResult.DealerWin);
                 else if (action == DuelAction.Raise)
                     Present(DuelTiming.BeforeBetDecision, DealerResponse, DuelActor.Dealer);
                 else EndBet();
-            }, DuelActor.Player, action: action, amount: paid ? InitialBet : 0);
+            }, DuelActor.Player, action: action, amount: amount);
         }
 
         /// <summary>プレイヤーのRaiseへCallまたはFoldで応じる。</summary>

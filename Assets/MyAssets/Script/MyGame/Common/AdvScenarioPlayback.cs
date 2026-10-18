@@ -32,6 +32,11 @@ namespace Casino.Common
                 if (Time.realtimeSinceStartup > deadline) throw new InvalidOperationException("宴が起動していません。");
                 yield return null;
             }
+            while (adv.AdvEngine.IsWaitBootLoading)
+            {
+                if (Time.realtimeSinceStartup > deadline) throw new InvalidOperationException("宴の起動読み込みが完了しません。");
+                yield return null;
+            }
             if (!runs.TryGetValue(key, out RunState run) || run.Failed)
             {
                 while (adv != null && adv.IsPlaying) yield return null;

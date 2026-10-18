@@ -9,7 +9,7 @@ namespace Casino.ThreeCardPoker
 
     /// <summary>スリーカードポーカーのタイミングに会話と視点を対応付ける。</summary>
     [CreateAssetMenu(menuName = "Casino/Poker/Presentation Event")]
-    public sealed class PokerPresentationEvent : ScriptableObject
+    public sealed class PokerPresentationEvent : Casino.Common.PresentationEventDefinition
     {
         [SerializeField] private bool eventEnabled = true;
         [SerializeField] private PokerTiming timing = PokerTiming.BeforePlayerDecision;

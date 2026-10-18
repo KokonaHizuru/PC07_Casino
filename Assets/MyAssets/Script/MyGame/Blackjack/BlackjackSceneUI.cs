@@ -22,12 +22,25 @@ namespace Casino.Blackjack
         [SerializeField] private Button funding;
         [SerializeField] private Button retry;
         [SerializeField] private CardGameChoiceLayout choiceLayout = new CardGameChoiceLayout();
+        private Casino.Story.CasinoRoundProgress progression;
         private PlayerData data;
         private bool presentationFailed;
+        public int CurrentBaseBet => !previewMode && GameInstance.Instance != null
+            ? GameInstance.Instance.casinoStory.GetBaseBet(Casino.Story.CasinoGameKind.Blackjack, initialBet) : initialBet;
+
+        /// <summary>次のラウンドから使う基本BETを変更する。</summary>
+        /// <param name="amount">変更後の基本BET。</param>
+        public void SetBaseBet(int amount)
+        {
+            if (amount <= 0 || amount % 2 != 0) throw new ArgumentOutOfRangeException(nameof(amount));
+            if (previewMode) initialBet = amount;
+            else GameInstance.Instance.casinoStory.SetBaseBet(Casino.Story.CasinoGameKind.Blackjack, amount);
+        }
 
         /// <summary>ボタンと状態通知を一度接続する。</summary>
         private void Awake()
         {
+            progression = GetComponent<Casino.Story.CasinoRoundProgress>();
             choiceLayout.Initialize(nextRound, hit, stand, doubleDown, funding, retry);
             hit.onClick.AddListener(Hit); stand.onClick.AddListener(Stand); doubleDown.onClick.AddListener(DoubleDown);
             nextRound.onClick.AddListener(NextRound); funding.onClick.AddListener(ResumeFunding); retry.onClick.AddListener(Retry);
@@ -55,13 +68,15 @@ namespace Casino.Blackjack
         /// <summary>次のラウンドを開始し、不正なBET設定は表示する。</summary>
         private void NextRound()
         {
-            if (initialBet < 2 || initialBet % 2 != 0)
+            if (progression != null && progression.IsFinished) return;
+            int bet = CurrentBaseBet;
+            if (bet < 2 || bet % 2 != 0)
             {
                 status.text = "Initial Bet must be a positive even number.";
                 CardGameChoiceLayout.SetVisible(nextRound, true);
                 Debug.LogError("Initial Betには正の偶数を指定してください。", this); return;
             }
-            controller.StartRound(initialBet);
+            controller.StartRound(bet);
         }
         /// <summary>確認用資金を補充するか、本番で補充した資金で再開する。</summary>
         private void ResumeFunding()
@@ -79,11 +94,12 @@ namespace Casino.Blackjack
         /// <param name="state">進行状態。</param>
         private void Refresh(BlackjackState state)
         {
+            if (progression != null) progression.Observe(state == BlackjackState.Completed);
             var game = controller.Game; if (game == null) return;
             CardGameChoiceLayout.SetVisible(hit, !presentationFailed && game.CanAct(BlackjackAction.Hit));
             CardGameChoiceLayout.SetVisible(stand, !presentationFailed && game.CanAct(BlackjackAction.Stand));
             CardGameChoiceLayout.SetVisible(doubleDown, !presentationFailed && game.CanAct(BlackjackAction.DoubleDown));
-            CardGameChoiceLayout.SetVisible(nextRound, !presentationFailed && state == BlackjackState.Completed);
+            CardGameChoiceLayout.SetVisible(nextRound, !presentationFailed && state == BlackjackState.Completed && (progression == null || !progression.IsFinished));
             CardGameChoiceLayout.SetVisible(funding, !presentationFailed && state == BlackjackState.WaitingForFunds);
             CardGameChoiceLayout.SetVisible(retry, presentationFailed);
             choiceLayout.Refresh();

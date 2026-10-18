@@ -151,6 +151,7 @@ MonoBehaviour:
   playArea: {fileID: 0}
   interactable: 1
   spacing: 200
+  drawDuration: 0.15
 --- !u!1 &300
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,6 +203,7 @@ MonoBehaviour:
   playArea: {fileID: 0}
   interactable: 0
   spacing: 200
+  drawDuration: 0.15
 --- !u!1 &400
 GameObject:
   m_ObjectHideFlags: 0

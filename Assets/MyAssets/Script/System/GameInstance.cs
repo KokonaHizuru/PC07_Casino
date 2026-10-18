@@ -25,11 +25,13 @@ public class GameInstance : MonoBehaviour
 	}
 
 	public PlayerData playerData = new();
+	public Casino.Story.CasinoStorySession casinoStory = new();
 	public SystemData systemData = new();
 
 	public void Initialize()
 	{
 		playerData.Reset();
+		casinoStory.Reset();
 
 		// システムデータのロードor作成
 		if (SaveManager.HasSystemSaveData())
